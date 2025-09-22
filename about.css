@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -256,4 +257,264 @@
 
 
 
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+.about-section {
+    background: #faf3e0;
+    padding: 80px 20px; 
+    text-align: center;
+    color: #333;
+  }
+  
+  .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .about-container h2 {
+    font-size: 36px;
+    color: #ff6600;
+    margin-bottom: 20px;
+  }
+  
+  .about-summary {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    color: #555;
+  }
+  
+  .about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .about-card {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about-card h3 {
+    font-size: 22px;
+    color: #ff6600;
+    margin-bottom: 15px;
+  }
+  
+  .about-card p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+
+
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .team-section {
+    background: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .team-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .team-container h2 {
+    font-size: 34px;
+    color: #ff6600;
+    margin-bottom: 15px;
+  }
+  
+  .team-intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+  }
+  
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .team-member {
+    flex: 1 1 250px;
+    background: #f8f9fb;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .team-member h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .team-member p {
+    font-size: 16px;
+    color: #777;
+  }
+  
+/*
+  .subpage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #faf3e0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  */
+ 
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+  } 
+
+  header img {
+    display: block;
+  }
+  
+  .logo img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .top-nav {
+      margin-top: 30px;
+  }
+  
+/*
+  .top-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .top-nav .signup {
+    background: #ff6600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    color: white;
+  }
+
+
+
+ /* Site Footer */
+ .site-footer {
+    background: #111;
+    color: #eee;
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ff6600;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #fff;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* makes icons white if they’re black svgs */
+    transition: transform 0.3s;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+
+
+
+>>>>>>> 6c37d284f8d9c3100369f1c99c34e3237cbb085f
   
