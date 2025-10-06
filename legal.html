@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TALK | Terms & Privacy</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent: #FF6600;           /* TALK orange */
+      --bg: #FBF4E7;              /* warm beige */
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --text: #111;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(20,20,20,0.06);
+      --glass: rgba(255,255,255,0.7);
+    }
+
+    body.dark {
+      --bg: #0f1113;
+      --card: #121315;
+      --muted: #b3b3b3;
+      --text: #eef0ef;
+      --shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.65;
+      transition: background .35s ease, color .35s ease;
+      overflow-y:auto;
+    }
+
+    /* Page fade-in */
+    .page { opacity:0; transform:translateY(6px); transition:opacity .45s ease, transform .45s ease; }
+    .page.ready { opacity:1; transform:none; }
+
+    /* Header */
+    header {
+      position: fixed;
+      top:0; left:0; right:0;
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 22px;
+      z-index:1000;
+      background: linear-gradient(90deg, rgba(255,102,0,0.98), rgba(255,102,0,0.95));
+      color:#fff;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+    }
+    body.dark header {
+      background: linear-gradient(90deg, rgba(255,102,0,0.9), rgba(255,102,0,0.78));
+      box-shadow: 0 10px 34px rgba(0,0,0,0.6);
+    }
+
+    .header-left { display:flex; gap:12px; align-items:center; }
+    .logo-placeholder {
+      width:48px; height:48px; border-radius:12px;
+      background: rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .title { font-weight:700; font-size:18px; }
+    .subtitle { font-size:12px; opacity:0.95; margin-top:3px; }
+
+    .controls { display:flex; gap:12px; align-items:center; }
+    .theme-toggle {
+      width:46px; height:28px; border-radius:999px;
+      background: rgba(255,255,255,0.12); padding:4px; cursor:pointer;
+      display:flex; align-items:center; border:1px solid rgba(255,255,255,0.06);
+      transition: all .25s ease;
+    }
+    .theme-toggle .dot { width:20px; height:20px; border-radius:50%; background:#fff; transform:translateX(0); transition:transform .25s ease; }
+    body.dark .theme-toggle { background: rgba(0,0,0,0.14); }
+    body.dark .theme-toggle .dot { transform:translateX(18px); background:var(--card); }
+
+    /* Tabbar */
+    .tabbar {
+      position: fixed; top:74px; left:0; right:0; z-index:999;
+      padding:10px 18px; display:flex; justify-content:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.6));
+      border-bottom:1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
+    body.dark .tabbar { background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(20,20,20,0.9)); border-bottom:1px solid rgba(255,255,255,0.04); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+
+    .tabs { display:flex; gap:12px; border-radius:12px; padding:6px; }
+    .tab {
+      padding:10px 18px; font-weight:600; font-size:15px; color:var(--muted);
+      background:transparent; border-radius:10px; cursor:pointer; transition: all .18s ease;
+    }
+    .tab:hover { transform:translateY(-2px); color:var(--text); }
+    .tab.active { color:var(--accent); background: linear-gradient(90deg, rgba(255,102,0,0.07), rgba(255,138,51,0.02)); box-shadow: 0 8px 20px rgba(255,102,0,0.05); border:1px solid rgba(255,102,0,0.06); }
+
+    /* Container */
+    .container { width:100%; max-width:1100px; margin:0 auto; padding: 22px; padding-top: 170px; min-height: calc(100vh - 260px); }
+    .card { background: var(--card); border-radius:12px; padding:20px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.03); transition: background .25s ease; }
+
+    .meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; color:var(--muted); font-size:13px; }
+
+    /* layout */
+    .legal-content { display:flex; gap:24px; align-items:flex-start; }
+    .toc { width:260px; position:sticky; top:140px; align-self:flex-start; height: calc(100vh - 200px); overflow:auto; }
+    .toc-card { padding:10px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45)); border:1px solid rgba(0,0,0,0.03); }
+    body.dark .toc-card { background: linear-gradient(180deg, rgba(30,30,30,0.85), rgba(30,30,30,0.78)); border:1px solid rgba(255,255,255,0.04); }
+
+    .toc-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
+    .toc-list button { text-align:left; padding:10px; border-radius:8px; background:transparent; border:1px solid transparent; cursor:pointer; color:var(--muted); }
+    .toc-list button.active { color:var(--accent); font-weight:600; background: rgba(255,102,0,0.04); border-color: rgba(255,102,0,0.06); }
+
+    .doc { flex:1; min-width:0; max-width:100%; }
+    .section { margin-bottom:18px; padding-bottom:8px; border-bottom:1px solid rgba(0,0,0,0.04); }
+    body.dark .section { border-bottom:1px solid rgba(255,255,255,0.04); }
+
+    .doc h1 { font-size:22px; color:var(--accent); margin-bottom:6px; }
+    .doc h2 { font-size:18px; margin:12px 0 8px; color:var(--text); }
+    .doc h3 { font-size:15px; margin:10px 0; color:var(--text); }
+    .doc p, .doc li { font-size:15px; color:var(--text); margin:8px 0; }
+    .doc ul { margin-left:20px; }
+
+    .summary-block { background: linear-gradient(180deg, rgba(255,102,0,0.06), rgba(255,102,0,0.03)); border-left:4px solid var(--accent); padding:12px; border-radius:8px; margin-bottom:12px; color:#333; }
+    body.dark .summary-block { color:#eee; background: linear-gradient(180deg, rgba(255,102,0,0.03), rgba(255,102,0,0.01)); }
+
+    .tab-panel { opacity:0; transform:translateY(8px); transition: opacity .38s ease, transform .38s ease; will-change: transform, opacity; display:none; }
+    .tab-panel.active { opacity:1; transform:none; display:block; }
+
+    footer.site { margin-top:24px; text-align:center; font-size:13px; color:var(--muted); padding:18px 6px; }
+
+    .btn { display:inline-block; padding:10px 14px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; font-weight:600; box-shadow:0 6px 18px rgba(255,102,0,0.12); transition: transform .12s ease; }
+    .btn:hover { transform:translateY(-3px); }
+
+    @media (max-width:980px){ .legal-content{ flex-direction:column; } .toc{ position:relative; width:100%; height:auto; top:auto; } .container{ padding-top:150px; } }
+    @media (max-width:520px){ header{ height:64px; padding:12px; } .tabbar{ top:64px; } .container{ padding-top:140px; } .toc{ display:none; } }
+
+  </style>
+</head>
+<body>
+  <div class="page" id="pageRoot">
+
+    <!-- Header -->
+    <header role="banner" aria-label="TALK legal header">
+      <div class="header-left">
+        <img src="/Tk_logo_3d_prep[1]-Photoroom.png" alt="TALK logo" class="logo-placeholder" />
+        <div>
+          <div class="title">TALK | Terms & Privacy</div>
+          <div class="subtitle" style="opacity:0.92">Your student ecosystem — campus • creators • commerce</div>
+        </div>
+      </div>
+
+      <div class="controls" role="navigation" aria-label="Controls">
+        <div style="font-size:13px; color:rgba(255,255,255,0.95); margin-right:6px;">TALK Wide Technologies Ltd.</div>
+        <div class="theme-toggle" id="themeToggle" role="button" aria-pressed="false" aria-label="Toggle dark mode">
+          <div class="dot"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tabbar -->
+    <div class="tabbar" role="tablist" aria-label="Legal tabs">
+      <div class="tabs" role="presentation">
+        <button class="tab active" role="tab" aria-selected="true" data-panel="panel-terms">Terms of Service</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="panel-privacy">Privacy Policy</button>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <main class="container" role="main">
+      <div class="card">
+        <div class="meta">
+          <div class="left">TALK Wide Technologies Ltd. — No. 103A Thinkers Corner, Enugu, Nigeria</div>
+          <div class="right">Contact: <a href="mailto:support@talk-wide.com">support@talk-wide.com</a></div>
+        </div>
+
+        <div class="legal-content">
+
+          <!-- TOC -->
+          <aside class="toc" aria-label="Table of contents">
+            <div class="toc-card">
+              <div style="font-weight:700; margin-bottom:8px;">Quick Nav</div>
+              <ul class="toc-list" id="tocList">
+                <!-- Terms anchors -->
+                <li><button data-scroll="t-intro" class="active">Introduction</button></li>
+                <li><button data-scroll="t-eligibility">Eligibility</button></li>
+                <li><button data-scroll="t-account">Account Registration</button></li>
+                <li><button data-scroll="t-permitted">Permitted & Prohibited Uses</button></li>
+                <li><button data-scroll="t-ip">Ownership & IP</button></li>
+                <li><button data-scroll="t-promotions">Promotions & Monetization</button></li>
+                <li><button data-scroll="t-market">Marketplace & Transactions</button></li>
+                <li><button data-scroll="t-payments">Payments & Billing</button></li>
+                <li><button data-scroll="t-creators">Creator Programs</button></li>
+                <li><button data-scroll="t-termination">Termination & Suspension</button></li>
+                <li><button data-scroll="t-service">Service Availability</button></li>
+                <li><button data-scroll="t-liability">Limitation of Liability</button></li>
+                <li><button data-scroll="t-indemnity">Indemnification</button></li>
+                <li><button data-scroll="t-law">Governing Law & Dispute</button></li>
+
+                <!-- Privacy anchors -->
+                <li style="margin-top:10px; font-weight:700; color:var(--muted)">Privacy</li>
+                <li><button data-scroll="p-intro">Privacy Introduction</button></li>
+                <li><button data-scroll="p-collect">Information We Collect</button></li>
+                <li><button data-scroll="p-use">How We Use Your Data</button></li>
+                <li><button data-scroll="p-sharing">Data Sharing</button></li>
+                <li><button data-scroll="p-retain">Data Retention</button></li>
+                <li><button data-scroll="p-rights">Your Rights</button></li>
+                <li><button data-scroll="p-cookies">Cookies & Tracking</button></li>
+                <li><button data-scroll="p-contact">Contact</button></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Document -->
+          <section class="doc" aria-live="polite">
+
+            <!-- TERMS PANEL -->
+            <div id="panel-terms" class="tab-panel active" role="tabpanel" aria-hidden="false">
+
+              <!-- Full expanded Terms of Service (publication-ready version) -->
+              <article class="section" id="t-intro">
+                <div class="summary-block"><strong>Summary Highlights:</strong> You must be 13+ to use TALK. You keep ownership of what you post but grant TALK a license to host and display it. Paid promotions and marketplace tools are subject to review. We may suspend or terminate accounts that violate policy. Disputes are handled under Nigerian law, with arbitration in Enugu.</div>
+
+                <h1>TERMS OF SERVICE</h1>
+
+                <p>Welcome to <strong>TALK</strong>, the student ecosystem built to connect students, creators, and innovators across campuses and beyond. These Terms of Service (“Terms”) are a legal agreement between you and <strong>TALK Wide Technologies Ltd.</strong> (“TALK,” “we,” “our,” or “us”). By creating an account, using, or accessing TALK in any way, you agree to these Terms. If you do not agree, please discontinue use immediately.</p>
+              </article>
+
+              <article class="section" id="t-eligibility">
+                <h2>1. Eligibility</h2>
+                <p>You must be at least <strong>13 years old</strong> to use TALK. By using TALK you confirm you meet this age requirement and have the legal capacity to enter a binding agreement. If you use TALK on behalf of an organization, you confirm you have authority to bind that organization.</p>
+              </article>
+
+              <article class="section" id="t-account">
+                <h2>2. Account Registration & Security</h2>
+                <p>To access certain features, you must create an account. You agree to:</p>
+                <ul>
+                  <li>Provide accurate and current information;</li>
+                  <li>Keep your password and credentials secure;</li>
+                  <li>Be responsible for all activity under your account;</li>
+                  <li>Notify TALK promptly of any unauthorized access.</li>
+                </ul>
+                <p>TALK may suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or otherwise present a risk to the platform or other users.</p>
+              </article>
+
+              <article class="section" id="t-permitted">
+                <h2>3. Permitted & Prohibited Uses</h2>
+                <p><strong>Permitted uses:</strong> Connect with students and communities, share content, participate in events and marketplace listings, and use promotions and sponsored features approved by TALK.</p>
+                <p><strong>Prohibited uses:</strong> You must not:</p>
+                <ul>
+                  <li>Post illegal, harassing, pornographic, hateful, or defamatory content;</li>
+                  <li>Impersonate others or misrepresent your identity;</li>
+                  <li>Upload viruses, malware, or engage in phishing;</li>
+                  <li>Exploit minors or facilitate exploitation;</li>
+                  <li>Circumvent payment systems, platform rules, or attempt unauthorized access;</li>
+                  <li>Use the platform for spam, bulk messaging, or unauthorized commercial activity.</li>
+                </ul>
+                <p>TALK reserves the right to remove or restrict any content or accounts that violate these rules or applicable law.</p>
+              </article>
+
+              <article class="section" id="t-ip">
+                <h2>4. Ownership & Intellectual Property</h2>
+                <p>You retain ownership of the content you post (text, photos, videos, or other materials). By posting content on TALK you grant TALK a <strong>non-exclusive, worldwide, royalty-free, sublicensable license</strong> to host, display, reproduce, distribute, promote, and otherwise use your content within TALK and for TALK-related promotional purposes. TALK does not claim ownership of your content, but the license you grant enables us to operate and improve the Platform.</p>
+                <p>TALK retains all rights in its software, design, trademarks, logos, and other intellectual property. You may not use TALK trademarks or branding without our prior written permission.</p>
+              </article>
+
+              <article class="section" id="t-promotions">
+                <h2>5. Promotions, Sponsored Content & Monetization</h2>
+                <p>TALK provides promotional and monetization services including sponsored posts, visibility boosts, event promotions, and targeted campaigns. Promotional options may include university-level, state-level, national, international, and custom-targeted campaigns (for selected schools).</p>
+                <p>TALK reserves the right to approve, reject, or remove promotional content. Sponsored content will be clearly labeled as “Sponsored.” Payments for promotions are non-refundable once delivery begins. TALK may also adjust visibility or delivery to maintain community standards and compliance with legal obligations.</p>
+              </article>
+
+              <article class="section" id="t-market">
+                <h2>6. Marketplace & Transactions</h2>
+                <p>TALK provides a digital environment for users to list, sell, or buy products and services. TALK acts solely as a facilitator and is not the seller or buyer in transactions between users. Users are responsible for their listings, fulfillment, and transaction terms. TALK is not responsible for disputes, losses, or fraud arising from user transactions.</p>
+              </article>
+
+              <article class="section" id="t-payments">
+                <h2>7. Payments & Billing</h2>
+                <p>Payments and billing for TALK services (including promotions) may be processed by third-party payment providers such as Paystack, Flutterwave, Stripe, or other processors. All fees and charges are displayed in the applicable currency. You are responsible for applicable taxes or transaction fees unless otherwise stated. Use of third-party processors is subject to their terms and privacy policies.</p>
+              </article>
+
+              <article class="section" id="t-creators">
+                <h2>8. Creator & Influencer Programs</h2>
+                <p>TALK may provide creator and influencer programs offering monetization, visibility tools, or special features. Eligibility, verification, payout schedules, and program rules are defined by TALK and may change from time to time. Participation in such programs requires compliance with TALK’s content policies and any additional program terms.</p>
+              </article>
+
+              <article class="section" id="t-termination">
+                <h2>9. Termination & Suspension</h2>
+                <p>TALK may suspend, limit, or terminate your account if you violate these Terms, engage in fraudulent or harmful behavior, or if required by law or request from relevant authorities. Users may delete their own accounts at any time via account settings. In certain cases, some user data may be retained for legal compliance, dispute resolution, or legitimate business purposes (see Privacy Policy).</p>
+              </article>
+
+              <article class="section" id="t-service">
+                <h2>10. Service Availability & Disclaimer</h2>
+                <p>TALK is provided <strong>“as is”</strong> and <strong>“as available”</strong>. TALK does not guarantee uninterrupted, error-free, secure, or virus-free service. We may modify, suspend, or discontinue features, services, or support for certain devices at any time. We are not responsible for events outside our control that affect service availability.</p>
+              </article>
+
+              <article class="section" id="t-liability">
+                <h2>11. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, TALK, its officers, directors, employees, and affiliates are not liable for indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from your use of the Platform. Where liability cannot be excluded by law, our aggregate liability to you will be limited to the amount you paid TALK in the twelve (12) months preceding the claim, if any.</p>
+              </article>
+
+              <article class="section" id="t-indemnity">
+                <h2>12. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless TALK, its affiliates and representatives from any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising from your use of the Platform, your content, or your breach of these Terms.</p>
+              </article>
+
+              <article class="section" id="t-law">
+                <h2>13. Governing Law & Dispute Resolution</h2>
+                <p><strong>Governing Law:</strong> The laws of the Federal Republic of Nigeria govern these Terms.</p>
+                <p><strong>Arbitration:</strong> Parties agree that disputes shall first be submitted to confidential arbitration at the <em>Enugu Court of Arbitration</em>. If arbitration is not available or enforceable for a specific dispute, enforcement may occur in the High Court of Enugu State.</p>
+              </article>
+
+              <article class="section" id="t-changes">
+                <h2>14. Changes to These Terms</h2>
+                <p>TALK may update these Terms from time to time. Material changes will be communicated via the Platform or email where appropriate. Your continued use of TALK after changes indicates acceptance of the revised Terms.</p>
+              </article>
+
+              <article class="section" id="t-contact">
+                <h2>15. Contact</h2>
+                <p>If you have questions about these Terms, please contact us at: <a href="mailto:support@talk-wide.com">support@talk-wide.com</a> or at our registered address: No. 103A Thinkers Corner, Enugu, Nigeria.</p>
+              </article>
+
+              <article class="section" id="t-final">
+                <h2>16. Miscellaneous</h2>
+                <p>These Terms constitute the entire agreement between you and TALK regarding your use of the Platform. If any provision is held to be invalid or unenforceable, the remaining provisions will remain in effect. TALK may assign its rights and obligations under these Terms in connection with corporate transactions. Any waiver must be in writing and signed by TALK.</p>
+              </article>
+
+            </div> <!-- end terms panel -->
+
+            <!-- PRIVACY PANEL -->
+            <div id="panel-privacy" class="tab-panel" role="tabpanel" aria-hidden="true">
+
+              <!-- Full expanded Privacy Policy (publication-ready version) -->
+              <article class="section" id="p-intro">
+                <div class="summary-block"><strong>Summary Highlights:</strong> We collect necessary data to run TALK and improve your experience. We do not sell personal data. You control your profile and can request access, correction, or deletion of your data. Data may be stored on secure servers inside or outside Nigeria under appropriate safeguards.</div>
+
+                <h1>PRIVACY POLICY</h1>
+
+                <p>This Privacy Policy explains how TALK Wide Technologies Ltd. (“TALK,” “we,” “our,” or “us”) collects, uses, stores, and protects your personal data when you use our websites, apps, or services (collectively, the “Platform”). By creating an account or using TALK, you consent to the practices described in this Policy.</p>
+              </article>
+
+              <article class="section" id="p-collect">
+                <h2>1. Information We Collect</h2>
+                <p>We collect information to provide a personalized, secure, and efficient experience.</p>
+
+                <h3>A. Information You Provide Directly</h3>
+                <ul>
+                  <li>Full name, username, email, and phone number;</li>
+                  <li>Profile information (school, department, bio, photos);</li>
+                  <li>Content you upload (posts, photos, videos, events, listings);</li>
+                  <li>Payment and billing details for promotions or marketplace use;</li>
+                  <li>Feedback, support requests, and communications with TALK staff.</li>
+                </ul>
+
+                <h3>B. Information Collected Automatically</h3>
+                <ul>
+                  <li>Device information (model, OS version, browser type);</li>
+                  <li>IP address and approximate location for security and analytics;</li>
+                  <li>Cookies, pixels, and usage logs (pages viewed, interactions, timestamps);</li>
+                  <li>Performance and diagnostic data to improve the Platform.</li>
+                </ul>
+
+                <h3>C. Information from Third Parties</h3>
+                <p>We may receive information from third parties such as payment processors, analytics platforms, and identity verification providers to help us operate the Platform and detect fraud.</p>
+              </article>
+
+              <article class="section" id="p-use">
+                <h2>2. How We Use Your Information</h2>
+                <p>We use personal data for the following purposes:</p>
+                <ul>
+                  <li>To create and manage user accounts and provide essential Platform features;</li>
+                  <li>To deliver social features, messaging, campus engagement tools, and marketplace functions;</li>
+                  <li>To process payments, promotions, and ads;</li>
+                  <li>To personalize content and recommendations;</li>
+                  <li>To send transactional messages and updates (security alerts, account notices);</li>
+                  <li>To detect, prevent and respond to fraud, abuse, or illegal activity;</li>
+                  <li>To comply with legal obligations and law enforcement requests.</li>
+                </ul>
+              </article>
+
+              <article class="section" id="p-legal-basis">
+                <h2>3. Legal Basis for Processing</h2>
+                <p>Depending on your jurisdiction, TALK relies on one or more of the following legal bases to process your personal data: contract performance (to deliver services you request), legitimate interests (for platform security and improvement), consent (for optional features and marketing), and legal obligations (to comply with laws).</p>
+              </article>
+
+              <article class="section" id="p-sharing">
+                <h2>4. Sharing of Information</h2>
+                <p>We do not sell personal data. We may share information as follows:</p>
+                <ul>
+                  <li><strong>Other users:</strong> Information you make public or visible via your profile and content is shared with other users;</li>
+                  <li><strong>Service providers:</strong> Hosting, analytics, payment processors, messaging, and support providers who act on our behalf;</li>
+                  <li><strong>Legal authorities:</strong> When required by law or to respond to legal process;</li>
+                  <li><strong>Business partners:</strong> Only with your explicit consent or opt-in.</li>
+                </ul>
+              </article>
+
+              <article class="section" id="p-promotions">
+                <h2>5. Promotions & Advertising</h2>
+                <p>We may use demographic and usage data (school, interests, location) to show relevant sponsored content. Promoted content will be clearly labeled as “Sponsored.” You may control some ad preferences via your account settings.</p>
+              </article>
+
+              <article class="section" id="p-security">
+                <h2>6. Data Security</h2>
+                <p>We implement technical and organizational measures to protect data — encryption in transit (HTTPS), access controls, monitoring, and regular security reviews. No system can guarantee 100% security, but we strive to maintain industry-standard protections.</p>
+              </article>
+
+              <article class="section" id="p-retain">
+                <h2>7. Data Retention</h2>
+                <p>We retain personal data for as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements. When an account is deleted, certain data may be retained in backups or logs for a limited period, and some information may be anonymized for analytics.</p>
+              </article>
+
+              <article class="section" id="p-rights">
+                <h2>8. Your Rights</h2>
+                <p>Subject to local law, you may have rights including:</p>
+                <ul>
+                  <li>Access your personal data;</li>
+                  <li>Request correction or deletion of inaccurate data;</li>
+                  <li>Withdraw consent to processing where applicable;</li>
+                  <li>Opt out of marketing communications;</li>
+                  <li>Where technically feasible, request a copy of your data (data portability).</li>
+                </ul>
+                <p>To exercise rights, contact <a href="mailto:support@talk-wide.com">support@talk-wide.com</a>. We will respond according to applicable laws and internal procedures.</p>
+              </article>
+
+              <article class="section" id="p-cookies">
+                <h2>9. Cookies & Tracking</h2>
+                <p>We use cookies, pixels, and similar technologies for authentication, analytics, performance, and advertising measurement. You can manage cookie preferences via your browser, though disabling cookies may affect Platform functionality.</p>
+              </article>
+
+              <article class="section" id="p-age">
+                <h2>10. Age Restriction</h2>
+                <p>TALK is intended for users aged <strong>13 years and older</strong>. We do not knowingly collect data from children under 13. If we learn that we have collected data from a child under 15 without parental consent, we will delete such data promptly.</p>
+              </article>
+
+              <article class="section" id="p-transfers">
+                <h2>11. International Data Transfers</h2>
+                <p>We may transfer and store data outside Nigeria on secure cloud services (e.g., AWS). Where transfers occur, we use appropriate safeguards and contractual protections to ensure data protection standards are met.</p>
+              </article>
+
+              <article class="section" id="p-changes">
+                <h2>12. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy to reflect changes in features, legal requirements, or business practices. When changes are material, we will notify users via the Platform or email. Continued use of TALK after updates constitutes acceptance of the revised policy.</p>
+              </article>
+
+              <article class="section" id="p-contact">
+                <h2>13. Contact</h2>
+                <p>If you have questions or requests regarding this Privacy Policy or your data, contact us at: <a href="mailto:support@talk-wide.com">support@talk-wide.com</a> or at our registered address: No. 103A Thinkers Corner, Enugu, Nigeria.</p>
+              </article>
+
+            </div> <!-- end privacy panel -->
+
+          </section> <!-- end doc -->
+
+        </div> <!-- end legal-content -->
+      </div> <!-- end card -->
+
+      <footer class="site">
+        <div>© 2025 TALK Wide Technologies Ltd. | No. 103A Thinkers Corner, Enugu, Nigeria</div>
+        <div style="margin-top:8px;">
+          <a class="btn" href="index.html" role="button">Back to Home</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div> <!-- end page -->
+
+  <script>
+    (function(){
+      // elements
+      const page = document.getElementById('pageRoot');
+      const tabs = document.querySelectorAll('.tab');
+      const panels = {
+        'panel-terms': document.getElementById('panel-terms'),
+        'panel-privacy': document.getElementById('panel-privacy')
+      };
+      const tocButtons = document.querySelectorAll('.toc .toc-list button');
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+
+      // page fade-in
+      requestAnimationFrame(()=> setTimeout(()=> page.classList.add('ready'), 60));
+
+      // Switch panel
+      function switchTo(panelId) {
+        tabs.forEach(t => {
+          const active = t.dataset.panel === panelId;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        Object.keys(panels).forEach(id => {
+          const pnl = panels[id];
+          if (id === panelId) {
+            pnl.style.display = '';
+            requestAnimationFrame(()=> {
+              pnl.classList.add('active');
+              pnl.setAttribute('aria-hidden','false');
+            });
+          } else {
+            pnl.classList.remove('active');
+            pnl.setAttribute('aria-hidden','true');
+            setTimeout(()=> { if (!pnl.classList.contains('active')) pnl.style.display = 'none'; }, 360);
+          }
+        });
+        // scroll content card to top
+        document.querySelector('.card').scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Tab click
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const panelId = tab.dataset.panel;
+          switchTo(panelId);
+        });
+        tab.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') tab.click(); });
+      });
+
+      // initial visibility
+      Object.keys(panels).forEach(id => {
+        const pnl = panels[id];
+        if (pnl.classList.contains('active')) { pnl.style.display = ''; pnl.setAttribute('aria-hidden','false'); }
+        else { pnl.style.display = 'none'; pnl.setAttribute('aria-hidden','true'); }
+      });
+
+      // TOC navigation
+      function scrollToId(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const container = document.querySelector('.card');
+        const rect = el.getBoundingClientRect();
+        const mainRect = container.getBoundingClientRect();
+        const offset = rect.top - mainRect.top + container.scrollTop - 12;
+        container.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.toc .toc-list button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.toc .toc-list button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const target = btn.dataset.scroll;
+          const privacyIds = ['p-intro','p-collect','p-use','p-legal-basis','p-sharing','p-promotions','p-security','p-retain','p-rights','p-cookies','p-age','p-transfers','p-changes','p-contact'];
+          if (privacyIds.includes(target)) {
+            switchTo('panel-privacy');
+            setTimeout(()=> scrollToId(target), 420);
+          } else {
+            switchTo('panel-terms');
+            setTimeout(()=> scrollToId(target), 420);
+          }
+        });
+      });
+
+      // theme persistence
+      const saved = localStorage.getItem('talk_theme');
+      if (saved === 'dark') { body.classList.add('dark'); themeToggle.setAttribute('aria-pressed','true'); }
+      else { body.classList.remove('dark'); themeToggle.setAttribute('aria-pressed','false'); }
+
+      themeToggle.addEventListener('click', () => {
+        const dark = body.classList.toggle('dark');
+        localStorage.setItem('talk_theme', dark ? 'dark' : 'light');
+        themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      });
+
+      // deep linking
+      const hash = location.hash.replace('#','').toLowerCase();
+      if (hash) {
+        if (hash.startsWith('p-') || hash === 'privacy') {
+          switchTo('panel-privacy');
+          setTimeout(()=> { const el = document.getElementById(hash); if (el) scrollToId(hash); }, 420);
+        } else {
+          switchTo('panel-terms');
+          setTimeout(()=> { const el = document.getElementById(hash); if (el) scrollToId(hash); }, 420);
+        }
+      }
+
+      // keyboard left/right to switch tabs
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          const arr = Array.from(document.querySelectorAll('.tab'));
+          const idx = arr.findIndex(t => t.classList.contains('active'));
+          if (idx === -1) return;
+          const next = e.key === 'ArrowRight' ? (idx + 1) % arr.length : (idx - 1 + arr.length) % arr.length;
+          arr[next].click();
+        }
+      });
+
+      // set first toc active
+      const firstToc = document.querySelector('.toc .toc-list button');
+      if (firstToc) {
+        document.querySelectorAll('.toc .toc-list button').forEach(b => b.classList.remove('active'));
+        firstToc.classList.add('active');
+      }
+
+    })();
+  </script>
+</body>
+</html>
