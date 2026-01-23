@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Verify Email — TALK × SEFF</title>
+  <style>
+    :root{--bg:#140816;--card:#241224;--accent:#ff6b35;--muted:#e6d6d6}
+    body{margin:0;background:linear-gradient(180deg,#0b0710,#2b1526);color:var(--muted);font-family:Inter,system-ui,Arial}
+    .wrap{max-width:820px;margin:30px auto;padding:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;color:#fff}
+    h1{margin:0}
+    label{display:block;margin-top:10px;font-size:13px;color:#ffd}
+    input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff;margin-top:6px}
+    .actions{display:flex;gap:10px;align-items:center;margin-top:12px}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#2b0303;font-weight:700;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+    .muted{color:#ffd;font-size:13px}
+    .small{font-size:13px;color:#ffd}
+    .alert{background:rgba(255,91,96,0.06);padding:10px;border-radius:8px;color:#ffadad;margin-top:10px;display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#ff6b35,#ffd166);display:flex;align-items:center;justify-content:center;font-weight:800;color:#3a0505">TALK</div>
+      <div>
+        <h1 style="margin:0;color:#fff">Verify your email</h1>
+        <div class="muted">We've (simulated) sent a 6-digit code to your email. Enter it to continue to checkout.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card">
+      <div id="regSummary" style="margin-bottom:12px"></div>
+      <div class="alert" id="alertBox"></div>
+
+      <label for="code">Enter verification code</label>
+      <input id="code" maxlength="6" placeholder="123456" />
+
+      <div class="actions">
+        <button id="verifyBtn">Verify</button>
+        <button id="resendBtn" class="ghost">Resend</button>
+        <button id="backBtn" class="ghost">Back</button>
+        <div style="flex:1"></div>
+        <div class="small">Need to change details? <a href="index.html" style="color:#ffd">Edit</a></div>
+      </div>
+
+      <div style="margin-top:12px;color:#ffd;font-size:13px">
+        NOTE: This page simulates verification. Replace with a server endpoint in production.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // load registration from localStorage
+    const reg = JSON.parse(localStorage.getItem('seff_registration') || '{}');
+    const alertBox = document.getElementById('alertBox');
+    function showAlert(msg){ if(!msg){ alertBox.style.display='none'; alertBox.textContent=''; } else { alertBox.style.display='block'; alertBox.textContent=msg; } }
+
+    if (!reg.email) {
+      showAlert('No registration found. Redirecting to registration...');
+      setTimeout(()=> location.href='index.html', 1400);
+    } else {
+      document.getElementById('regSummary').innerHTML = `<strong>${reg.name}</strong> · ${reg.institution} · <span style="color:#ffd">${reg.referral}</span><br><span style="font-size:13px;color:#ffd">${reg.email}</span>`;
+      // Simulate sending code from "server"
+      // NOTE: In production, server must send email to user and NOT return the code to client.
+      const code = Math.floor(100000 + Math.random()*900000).toString();
+      // For demo we store the code in localStorage under a special key; server would not do this.
+      localStorage.setItem('seff_verification_code', code);
+      console.log('[SIM] verification code:', code);
+      showAlert('A verification code was SIMULATED and sent to the email (check console for demo code).');
+    }
+
+    document.getElementById('resendBtn').addEventListener('click', () => {
+      if (!reg.email) return;
+      const code = Math.floor(100000 + Math.random()*900000).toString();
+      localStorage.setItem('seff_verification_code', code);
+      console.log('[SIM] resent verification code:', code);
+      showAlert('Verification code resent (SIMULATED). Check console for the demo code.');
+    });
+
+    document.getElementById('verifyBtn').addEventListener('click', () => {
+      const entered = document.getElementById('code').value.trim();
+      const saved = localStorage.getItem('seff_verification_code');
+      if (!entered) { showAlert('Please enter the 6-digit code.'); return; }
+      if (entered === saved) {
+        // mark registration as emailVerified
+        if (reg) {
+          reg.emailVerified = true;
+          localStorage.setItem('seff_registration', JSON.stringify(reg));
+        }
+        // TODO: Call backend to verify code server-side and issue a verification token.
+        showAlert('Verified! Redirecting to checkout...');
+        setTimeout(()=> location.href = 'checkout.html', 900);
+      } else {
+        showAlert('Incorrect code. Try again or resend.');
+      }
+    });
+
+    document.getElementById('backBtn').addEventListener('click', () => location.href = 'index.html');
+
+    // convenience: press Enter to verify
+    document.getElementById('code').addEventListener('keyup', (e) => { if (e.key === 'Enter') document.getElementById('verifyBtn').click(); });
+  </script>
+</body>
+</html>
