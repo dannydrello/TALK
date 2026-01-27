@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help & Support - TALK</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="nav">
+    <!-- LOGO -->
+    <img src="logo.png" alt="TALK Logo" class="logo-img">
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help & Support</a>
+      <a href="legal.html">Legal</a>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="nav-actions">
+      <button class="btn ghost login-btn">Login</button>
+      <button class="btn">Download</button>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE DROPDOWN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="help.html">Help & Support</a>
+    <a href="legal.html">Legal</a>
+    <button class="btn">Download</button>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="help-hero">
+    <h1>Help & Support</h1>
+    <p>Get answers to your questions and connect with our support team</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for help..." id="searchInput">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="quick-links">
+    <div class="container">
+      <h2>Quick Links</h2>
+      <div class="links-grid">
+        <div class="link-card">
+          <i class="fas fa-book-open"></i>
+          <h3>Getting Started</h3>
+          <p>Learn how to create an account and set up your profile</p>
+        </div>
+        <div class="link-card">
+          <i class="fas fa-lock"></i>
+          <h3>Security & Privacy</h3>
+          <p>Understand how we protect your data and privacy settings</p>
+        </div>
+        <div class="link-card">
+          <i class="fas fa-coins"></i>
+          <h3>Campus Market</h3>
+          <p>Buy, sell, and manage your marketplace items</p>
+        </div>
+        <div class="link-card">
+          <i class="fas fa-megaphone"></i>
+          <h3>Billboard</h3>
+          <p>Share announcements and discover campus events</p>
+        </div>
+        <div class="link-card">
+          <i class="fas fa-user-circle"></i>
+          <h3>Profile & Account</h3>
+          <p>Manage your profile, preferences, and settings</p>
+        </div>
+        <div class="link-card">
+          <i class="fas fa-briefcase"></i>
+          <h3>Horizon</h3>
+          <p>Find internships, scholarships, and opportunities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <!-- General Questions -->
+        <div class="faq-category">
+          <h3 class="category-title">General Questions</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is TALK?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>TALK is the ultimate student platform that connects campus life, lifestyle, and opportunities all in one place. From conversations to marketplaces, events to communities, TALK keeps you engaged and connected to what matters most at your university.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I create an account?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>To create an account, download the TALK app, click "Sign Up," enter your university email address, set a password, and complete your profile. University email verification is required to join your campus community.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is TALK available on all campuses?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>TALK is expanding to universities worldwide. Check our website to see if your campus is currently available. If your campus isn't listed yet, you can sign up to be notified when we launch.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I use TALK outside my university?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>TALK is primarily designed for your university community. However, you can connect with students from other universities through our global opportunities section in Horizon.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account & Security -->
+        <div class="faq-category">
+          <h3 class="category-title">Account & Security</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I reset my password?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Click "Forgot Password" on the login screen, enter your email address, and we'll send you a link to reset your password. Follow the instructions in the email to create a new password.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is my data safe on TALK?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We use industry-standard encryption and security protocols to protect your data. Your privacy is our priority. For more details, please review our Privacy Policy.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I delete my account?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Go to Settings > Account > Delete Account. Your data will be permanently deleted within 30 days. You can contact support if you need immediate deletion.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I change my privacy settings?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Navigate to Settings > Privacy. Here you can control who sees your profile, posts, and activity. You can customize these settings at any time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campus Market -->
+        <div class="faq-category">
+          <h3 class="category-title">Campus Market</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I list an item for sale?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Go to Campus Market, click "Sell Item," add photos, title, description, and price. Review your listing and publish. Your item will be visible to your campus community immediately.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is there a fee for selling items?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>TALK takes a small commission on completed sales to maintain the platform. The fee is deducted from your sale price. Check Campus Market for current fee details.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I make a purchase?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Browse items, click on a listing, and click "Buy Now" or "Make Offer." Complete the payment, arrange pickup/delivery with the seller, and rate the transaction when complete.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if I have a problem with a transaction?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>If there's an issue with a purchase, contact the seller first. If unresolved, go to your transaction and click "Report Issue." Our support team will review and help resolve it.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="faq-category">
+          <h3 class="category-title">Features & Usage</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I find events on Billboard?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Open Billboard and browse trending posts and announcements. Use filters to find specific categories. You can also follow clubs and organizations to see their events.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I search for internships in Horizon?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Visit Horizon and use the search filters by field, company, location, and deadline. Set up job alerts to get notified about new opportunities matching your preferences.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I message other students?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! You can send direct messages to other students. Open their profile and click "Message." Your conversations are private and secure.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I report inappropriate content?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Long-press or tap the three dots on any post/profile. Select "Report" and choose the reason. Our moderation team reviews all reports within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p class="section-subtitle">Can't find what you're looking for? Contact our support team</p>
+      
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3>Send us a Message</h3>
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/support@talk-wide.com" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <select name="topic" required>
+                <option value="">Select Topic</option>
+                <option value="general">General Inquiry</option>
+                <option value="account">Account Issue</option>
+                <option value="market">Campus Market</option>
+                <option value="security">Security Concern</option>
+                <option value="report">Report Problem</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <input type="hidden" name="_next" value="https://talk-wide.com/help.html?success=true">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-wrapper">
+          <h3>Contact Information</h3>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email Support</h4>
+              <p>support@talk-wide.com</p>
+              <span class="response-time">Response time: 24 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div>
+              <h4>Live Chat</h4>
+              <a href="https://wa.me/2348085469349" target="_blank" class="whatsapp-link">Chat on WhatsApp</a>
+              <span class="response-time">Average response: 5 minutes</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone Support</h4>
+              <p>08085469349</p>
+              <p>+234 901 934 3366</p>
+              <span class="response-time">Monday - Friday, 10 AM - 5 PM WAT</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div>
+              <h4>Social Media</h4>
+              <p>@talkcampus on Twitter & Instagram</p>
+              <span class="response-time">Follow for updates and announcements</span>
+            </div>
+          </div>
+
+          <div class="support-hours">
+            <h4>Support Hours</h4>
+            <ul>
+              <li>Monday - Friday: 9 AM - 6 PM EST</li>
+              <li>Saturday: 10 AM - 4 PM EST</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="logo.png" class="footer-logo" alt="TALK Logo">
+        <p>Your campus network, reimagined.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="help.html">Help Center</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Safety</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="legal.html">Privacy</a></li>
+          <li><a href="legal.html">Terms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Social</h3>
+        <div class="social-icons">
+          <a href="https://x.com/D_rello_" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/info_talkwide/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/109144219/admin/dashboard/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-footer">
+      <a href="#" class="download-btn">Download App</a>
+    </div>
+
+    <p class="footer-bottom">© 2026 TALK. All rights reserved.</p>
+  </footer>
+
+  <script src="help.js"></script>
+</body>
+</html>
