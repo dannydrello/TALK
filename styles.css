@@ -200,19 +200,12 @@ body {
   margin: 16px 0;
 }
 
-.cta {
+.cta-wrapper {
   display: flex;
-  background: #fff;
-  border-radius: 999px;
-  padding: 6px;
-  max-width: 420px;
+  justify-content: center;
+  margin-top: 100px; /* adjust spacing if needed */
 }
 
-.cta input {
-  border: none;
-  flex: 1;
-  padding: 12px;
-}
 
 /* SECTIONS */
 .feature {
