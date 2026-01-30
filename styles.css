@@ -116,6 +116,13 @@ body {
   gap: 5px;
 }
 
+.new{
+  color: #e89e0b;
+  font-size: 18px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 .menu-btn span {
   display: block;
   width: 24px;
@@ -200,7 +207,7 @@ body {
   margin: 16px 0;
 }
 
-.cta-wrapper {
+.cta {
   display: flex;
   justify-content: center;
   margin-top: 100px; /* adjust spacing if needed */
