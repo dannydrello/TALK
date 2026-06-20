@@ -69,6 +69,14 @@ body {
   width: 100%;
 }
 
+.nav-center a.nav-active {
+  color: #ff7a00;
+}
+
+.nav-center a.nav-active::after {
+  width: 100%;
+}
+
 .nav-actions {
   display: flex;
   gap: 16px;
@@ -520,6 +528,26 @@ body {
   color: #4b5563;
   font-size: 12px;
   padding-top: 30px;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .brand-img {
+    width: 200px;
+  }
+
+  .new {
+    font-size: 15px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 }
 
 /* MOBILE */
