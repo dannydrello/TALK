@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Deletion - TALK</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="legal.css">
+  <style>
+    /* Step list styling */
+    .step-list {
+      list-style: none;
+      margin: 16px 0;
+      counter-reset: step-counter;
+    }
+
+    .step-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 122, 0, 0.08);
+      counter-increment: step-counter;
+      padding-left: 0;
+    }
+
+    .step-list li::before {
+      content: none;
+    }
+
+    .step-list li:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ff7a00 0%, #ff6600 100%);
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content strong {
+      display: block;
+      color: #f3f4f6;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      margin-bottom: 0 !important;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(255, 60, 0, 0.1);
+      border-left: 4px solid #ff3c00;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .warning-box i {
+      color: #ff3c00;
+      font-size: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .warning-box p {
+      color: #f3a683;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 0 !important;
+    }
+
+    /* Info box */
+    .info-box {
+      background: rgba(255, 122, 0, 0.08);
+      border-left: 4px solid #ff7a00;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .info-box i {
+      color: #ff7a00;
+      font-size: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .info-box p {
+      color: #b3bcc4;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 0 !important;
+    }
+
+    /* ios-note */
+    .ios-note {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #6b7280;
+      text-align: center;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ4H9XMT4G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQ4H9XMT4G');
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="nav">
+    <!-- LOGO -->
+    <img src="logo.png" alt="TALK Logo" class="logo-img">
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="globe.html">Globe</a>
+      <a href="help.html">Help & Support</a>
+      <a href="legal.html">Legal</a>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="nav-actions">
+      <a href="https://www.talk-wide.com/signup" class="btn ghost login-btn">Login</a>
+      <a href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk" class="btn">Download</a>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE DROPDOWN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="globe.html">Globe</a>
+    <a href="help.html">Help & Support</a>
+    <a href="legal.html">Legal</a>
+    <button class="btn">Download</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="legal-container">
+    <!-- Title Section -->
+    <div class="legal-header">
+      <h1>Account Deletion</h1>
+      <p>How to permanently delete your TALK account and what happens to your data</p>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="legal-card">
+
+        <!-- Overview -->
+        <section class="legal-section">
+          <h3><i class="fas fa-info-circle" style="margin-right:8px;"></i>Overview</h3>
+          <p>You can permanently delete your TALK account at any time. Deleting your account removes your profile, posts, messages, and all associated data from our platform. This action is <strong style="color:#ff3c00;">irreversible</strong> — once confirmed, your account cannot be recovered.</p>
+          <p>Please read through this page carefully before proceeding, including what data gets deleted and what alternatives are available to you.</p>
+        </section>
+
+        <!-- Warning -->
+        <section class="legal-section">
+          <h3><i class="fas fa-exclamation-triangle" style="margin-right:8px;"></i>Before You Delete</h3>
+          <div class="warning-box">
+            <i class="fas fa-exclamation-circle"></i>
+            <p><strong>Account deletion is permanent and cannot be undone.</strong> Once you confirm deletion, you will lose access to your account immediately and your data will be permanently erased within 30 days.</p>
+          </div>
+          <p>Deleting your account will permanently remove:</p>
+          <ul>
+            <li>Your profile, display name, and profile picture</li>
+            <li>All posts, comments, and reactions you have made</li>
+            <li>Your direct messages and chat history</li>
+            <li>Your marketplace listings and shop</li>
+            <li>Your saved items, followers, and following list</li>
+            <li>Your Horizon activity and opportunities</li>
+            <li>All account settings and preferences</li>
+          </ul>
+          <div class="info-box">
+            <i class="fas fa-lightbulb"></i>
+            <p>If you're having trouble with the app or your account, consider reaching out to our support team first — many issues can be resolved without deleting your account. Visit our <a href="help.html">Help & Support</a> page for assistance.</p>
+          </div>
+        </section>
+
+        <!-- Steps -->
+        <section class="legal-section">
+          <h3><i class="fas fa-list-ol" style="margin-right:8px;"></i>How to Delete Your Account</h3>
+          <p>Follow these steps inside the TALK app to permanently delete your account:</p>
+
+          <ol class="step-list">
+            <li>
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <strong>Sign in to your account</strong>
+                <p>Open the TALK app and sign in with your registered email address and password. If you have forgotten your password, use the "Forgot Password" option on the login screen.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <strong>Navigate to your profile</strong>
+                <p>Once logged in, tap your profile icon or avatar to open your profile page.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <strong>Open Settings</strong>
+                <p>Tap the <strong>settings icon</strong> located just below your profile picture to access your account settings.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <strong>Select "Delete Account"</strong>
+                <p>Scroll down within settings and tap <strong>Delete Account</strong>. This option is typically found at the bottom of the settings menu.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <strong>Confirm deletion</strong>
+                <p>A confirmation prompt will appear asking if you are sure you want to delete your account. Tap <strong>Confirm</strong> to permanently delete your account. This action cannot be reversed.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- After Deletion -->
+        <section class="legal-section">
+          <h3><i class="fas fa-clock" style="margin-right:8px;"></i>What Happens After Deletion</h3>
+          <ul>
+            <li>Your account is deactivated immediately upon confirmation.</li>
+            <li>You will be logged out of all devices instantly.</li>
+            <li>Your profile will no longer be visible to other users.</li>
+            <li>All your personal data will be permanently deleted from our servers within <strong style="color:#ff7a00;">30 days</strong>.</li>
+            <li>Some anonymized data (such as aggregated usage statistics) may be retained as required by law or for platform integrity purposes.</li>
+            <li>Any active marketplace listings will be removed within the same period.</li>
+          </ul>
+          <div class="info-box">
+            <i class="fas fa-shield-alt"></i>
+            <p>TALK complies with applicable data protection laws. If you would like to request immediate data erasure, or if you have questions about what data is retained, please contact us at <a href="mailto:support@talk-wide.com">support@talk-wide.com</a>.</p>
+          </div>
+        </section>
+
+        <!-- Alternatives -->
+        <section class="legal-section">
+          <h3><i class="fas fa-exchange-alt" style="margin-right:8px;"></i>Alternatives to Deletion</h3>
+          <p>If you are not ready to permanently delete your account, consider these options instead:</p>
+          <ul>
+            <li><strong>Take a break:</strong> Simply log out of the app. Your account and data remain safely stored and you can return at any time.</li>
+            <li><strong>Adjust your privacy settings:</strong> Navigate to Settings &gt; Privacy to limit who can see your profile and content.</li>
+            <li><strong>Disable notifications:</strong> Turn off all notifications in Settings if the app feels overwhelming.</li>
+            <li><strong>Contact support:</strong> If you are experiencing a specific issue, our team can help resolve it quickly without losing your account.</li>
+          </ul>
+        </section>
+
+        <!-- Contact -->
+        <section class="legal-section">
+          <h3><i class="fas fa-headset" style="margin-right:8px;"></i>Need Help?</h3>
+          <p>If you encounter any issues during the deletion process, or if you want to request manual account deletion, contact our support team:</p>
+          <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:support@talk-wide.com">support@talk-wide.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+2349133141315">+234 913 314 1315</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348085469349" target="_blank">Chat on WhatsApp</a></p>
+            <p><strong>Address:</strong> 103A Thinkers Corner, Enugu, Nigeria</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>TALK</h3>
+        <p>Welcome to the world of students.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./help.html">Help & Support</a></li>
+          <li><a href="./legal.html">Legal</a></li>
+          <li><a href="./account-deletion.html">Account Deletion</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="https://www.tiktok.com/@talk_main1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/info_talkwide/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/109144219/admin/dashboard/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@TALKSUPPORT01" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-footer">
+      <a class="download-btn" href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk">Download TALK</a>
+      <span class="ios-note">iOS version coming soon</span>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TALK. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="legal.js"></script>
+</body>
+</html>
