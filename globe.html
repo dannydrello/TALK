@@ -4,29 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Campus Globe — TALK</title>
+  <meta name="description" content="Explore the Campus Globe and see every university where TALK is live around the world.">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="globe.css" />
-  
 
   <meta property="og:title" content="Campus Globe — TALK" />
-<meta property="og:description" content="See all the campuses where TALK is live, around the world." />
-<meta property="og:image" content="https://dannydrello.github.io/Resources/globe.png" />
-<meta property="og:url" content="https://dannydrello.github.io/globe.html" />
-<meta property="og:type" content="website" />
+  <meta property="og:description" content="See all the campuses where TALK is live, around the world." />
+  <meta property="og:image" content="https://dannydrello.github.io/Resources/globe.png" />
+  <meta property="og:url" content="https://dannydrello.github.io/globe.html" />
+  <meta property="og:type" content="website" />
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ4H9XMT4G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ4H9XMT4G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQ4H9XMT4G');
+  </script>
 
-  gtag('config', 'G-CQ4H9XMT4G');
-</script>
-  
   <!-- Globe.gl -->
   <script src="https://unpkg.com/globe.gl"></script>
 </head>
@@ -41,7 +40,7 @@
     <nav class="nav-center">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="globe.html">Globe</a>
+      <a href="globe.html" class="nav-active">Globe</a>
       <a href="help.html">Help & Support</a>
       <a href="legal.html">Legal</a>
     </nav>
@@ -49,7 +48,7 @@
     <!-- ACTIONS -->
     <div class="nav-actions">
       <a href="https://www.talk-wide.com/signup" class="btn ghost login-btn">Login</a>
-      <a href="https://github.com/dannydrello/TALK/releases/download/v1.0.3/TALK.apk" class="btn">Download</a>
+      <a href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk" class="btn">Download</a>
     </div>
 
     <!-- MOBILE MENU BUTTON -->
@@ -67,7 +66,7 @@
     <a href="globe.html">Globe</a>
     <a href="help.html">Help & Support</a>
     <a href="legal.html">Legal</a>
-    <a href="#download" class="btn">Download</a>
+    <a href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk" class="btn">Download</a>
   </div>
 
   <!-- GLOBE SECTION -->
@@ -84,7 +83,7 @@
 
   <!-- Logic -->
   <script src="globe.js"></script>
-  
+
   <!-- Menu Toggle Script -->
   <script>
     const menuBtn = document.getElementById('menuBtn');
@@ -95,7 +94,6 @@
       mobileMenu.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menuBtn.classList.remove('active');
