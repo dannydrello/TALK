@@ -75,6 +75,14 @@ header {
   width: 100%;
 }
 
+.nav-center a.nav-active {
+  color: #ff7a00;
+}
+
+.nav-center a.nav-active::after {
+  width: 100%;
+}
+
 .nav-actions {
   display: flex;
   gap: 16px;
