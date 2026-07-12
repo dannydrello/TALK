@@ -168,7 +168,7 @@ function updateStats() {
     </div>
     <div class="stats-item">
       <span class="stats-icon">👥</span>
-      <span class="stats-text"><span class="stats-number">${(totalStudents / 1000000).toFixed(2)}M</span><span class="stats-label">Students</span></span>
+      <span class="stats-text"><span class="stats-number">${totalStudents >= 1000000 ? (totalStudents/1000000).toFixed(1)+'M' : totalStudents >= 1000 ? (totalStudents/1000).toFixed(1)+'K' : totalStudents.toLocaleString()}</span><span class="stats-label">Students</span></span>
     </div>
   `;
 }

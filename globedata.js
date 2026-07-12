@@ -5,8 +5,8 @@ const CAMPUS_DATA = [
     name: "Nigeria",
     lat: 9.082,
     lng: 8.675,
-    count: 6
-  }, 
+    count: 2
+  },
 
   // NIGERIAN STATES
   {
@@ -24,6 +24,6 @@ const CAMPUS_DATA = [
     lat: 6.4269,
     lng: 7.5096,
     state: "Enugu State",
-    students: 22000
+    students: 450
   },
 ];
