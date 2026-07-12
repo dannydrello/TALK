@@ -1,23 +1,4 @@
-// SECTION ANIMATION
-const sections = document.querySelectorAll(".feature");
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  { threshold: 0.25 }
-);
-
-sections.forEach(section => {
-  section.classList.add("animate");
-  observer.observe(section);
-});
-
-// MOBILE MENU TOGGLE
+/* ── MOBILE MENU ──────────────────────────────────── */
 const menuBtn = document.querySelector(".menu-btn");
 const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -27,57 +8,113 @@ if (menuBtn && mobileMenu) {
     mobileMenu.classList.toggle("open");
   });
 
-  // Close menu when clicking on a link
-  const mobileLinks = document.querySelectorAll(".mobile-menu a");
-  mobileLinks.forEach(link => {
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
     link.addEventListener("click", () => {
       menuBtn.classList.remove("active");
       mobileMenu.classList.remove("open");
     });
   });
 
-  // Close menu when clicking outside
   document.addEventListener("click", (e) => {
-    if (!e.target.closest("header")) {
+    if (!e.target.closest(".menu-btn") && !e.target.closest(".mobile-menu")) {
       menuBtn.classList.remove("active");
       mobileMenu.classList.remove("open");
     }
   });
 }
 
-// CAROUSEL FUNCTIONALITY - ENDLESS MOVING WITH 3 SEPARATE IMAGES
-const carousel = document.querySelector(".carousel");
-const carouselContainer = document.querySelector(".carousel-container");
+/* ── SECTION SCROLL REVEAL ────────────────────────── */
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("ns-visible");
+        revealObserver.unobserve(entry.target);
 
-if (carousel && carouselContainer) {
-  let currentIndex = 0;
-  const totalOriginalImages = 5; // Number of original images
-  const imageWidth = 33.333; // Width in percentage for 3 images
-  const gap = 2; // Gap adjustment in percentage
-  const itemWidth = imageWidth + gap; // Total width per item movement
-  const autoScrollInterval = 4000; // Auto scroll every 4 seconds
+        // Fire counter animation when section 1 becomes visible
+        if (entry.target.querySelector(".stat-num[data-count]")) {
+          animateCounters(entry.target);
+        }
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
 
-  const updateCarousel = () => {
-    carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
-  };
+document.querySelectorAll(".new-section").forEach(el => {
+  el.classList.add("ns-anim");
+  revealObserver.observe(el);
+});
 
-  const scrollNext = () => {
-    currentIndex++;
-    updateCarousel();
+/* ── STAT COUNTER ANIMATION ───────────────────────── */
+function animateCounters(section) {
+  section.querySelectorAll(".stat-num[data-count]").forEach(el => {
+    const target  = parseInt(el.dataset.count, 10);
+    const suffix  = el.dataset.suffix || "";
+    const duration = 1600;
+    const start   = performance.now();
 
-    // Reset to beginning when we reach the duplicated section
-    if (currentIndex >= totalOriginalImages) {
-      setTimeout(() => {
-        carousel.style.transition = "none";
-        currentIndex = 0;
-        updateCarousel();
-        setTimeout(() => {
-          carousel.style.transition = "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)";
-        }, 50);
-      }, 800);
+    const tick = (now) => {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  });
+}
+
+/* ── FAQ ACCORDION ────────────────────────────────── */
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item   = btn.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".faq-item.open").forEach(el => el.classList.remove("open"));
+
+    if (!isOpen) item.classList.add("open");
+  });
+});
+
+/* ── PARALLAX ON HERO ORBS (mouse move) ──────────── */
+const orbs = document.querySelectorAll(".orb");
+
+if (orbs.length) {
+  document.addEventListener("mousemove", (e) => {
+    const cx = window.innerWidth  / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx; // -1 to 1
+    const dy = (e.clientY - cy) / cy; // -1 to 1
+
+    orbs.forEach((orb, i) => {
+      const depth = (i + 1) * 10; // 10, 20, 30px max shift
+      // Use CSS custom properties to layer on top of the keyframe animation
+      orb.style.setProperty("--px", `${dx * depth}px`);
+      orb.style.setProperty("--py", `${dy * depth}px`);
+    });
+  });
+}
+
+/* ── SMOOTH NAVBAR ON SCROLL ──────────────────────── */
+const nav = document.querySelector(".nav");
+
+if (nav) {
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+
+    if (y > 80) {
+      nav.style.background     = "rgba(10,14,26,0.88)";
+      nav.style.backdropFilter = "blur(18px)";
+      nav.style.boxShadow      = "0 4px 24px rgba(0,0,0,0.3)";
+      nav.style.borderRadius   = "0 0 16px 16px";
+    } else {
+      nav.style.background     = "";
+      nav.style.backdropFilter = "";
+      nav.style.boxShadow      = "";
+      nav.style.borderRadius   = "";
     }
-  };
-
-  // Auto scroll
-  setInterval(scrollNext, autoScrollInterval);
+  }, { passive: true });
 }

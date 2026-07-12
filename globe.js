@@ -2,9 +2,9 @@ const container = document.getElementById("globe-container");
 
 // Create the globe
 const GLOBE = Globe()(container)
-  .globeImageUrl("//unpkg.com/three-globe/example/img/earth-dark.jpg")
-  .backgroundImageUrl("//unpkg.com/three-globe/example/img/night-sky.png")
-  .bumpImageUrl("//unpkg.com/three-globe/example/img/earth-topology.png")
+  .globeImageUrl("https://unpkg.com/three-globe/example/img/earth-dark.jpg")
+  .backgroundImageUrl("https://unpkg.com/three-globe/example/img/night-sky.png")
+  .bumpImageUrl("https://unpkg.com/three-globe/example/img/earth-topology.png")
   .showAtmosphere(true)
   .atmosphereColor("#ff6600")
   .atmosphereAltitude(0.15)
