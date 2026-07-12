@@ -26,4 +26,12 @@ const CAMPUS_DATA = [
     state: "Enugu State",
     students: 450
   },
+  {
+    level: "university",
+    name: "University of Nigeria, Nsukka (UNN)",
+    lat: 6.8702,
+    lng: 7.3929,
+    state: "Enugu State",
+    students: 0
+  },
 ];
