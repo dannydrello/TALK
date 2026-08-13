@@ -41,7 +41,7 @@
     </nav>
     <div class="nav-actions">
       <a href="https://www.talk-wide.com/signup" class="btn ghost login-btn">Login</a>
-      <a href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk" class="btn">Download</a>
+      <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
     </div>
     <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
   </header>
@@ -54,11 +54,11 @@
     <a href="status.html">TALK Status</a>
     <a href="help.html">Help &amp; Support</a>
     <a href="legal.html">Legal</a>
-    <a href="https://github.com/dannydrello/TALK/releases/download/v1.1.0/Talk.1.0.10.apk" class="btn">Download</a>
+    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
   </div>
 
   <!-- HERO CONTENT -->
-  <div class="sr" style="width:100%;display:flex;flex-direction:column;align-items:center;position:relative;">
+  <div class="st-hero-content-wrap">
     <div class="st-pill">⭐&nbsp;&nbsp;Status. Recognition. Opportunity.</div>
 
     <h1 class="st-hero-title">
@@ -408,12 +408,9 @@
       <div class="demo-card sr">
         <div class="demo-avatar">DI</div>
         <p class="demo-name">Daniel Israel</p>
-        <div class="demo-badge ta-b">👑 TALKATIVE</div>
+        <div class="demo-badge ta-b" id="taBadge" title="Tap to see referrals">👑 TALKATIVE</div>
+        <div class="ref-reveal" id="refReveal">🗣️ 327 referrals</div>
         <div class="demo-badge cs-b">🔥 CAMPUS ICON</div>
-        <div class="demo-stats">
-          <div class="ds-item"><strong>327</strong><span>Referrals</span></div>
-          <div class="ds-item"><strong>7,842</strong><span>Followers</span></div>
-        </div>
       </div>
 
       <div class="demo-info">
@@ -535,15 +532,15 @@
 <script>
 /* ── STATUS PAGE JS ──────────────────────────────── */
 
-/* Hero progress bars animate shortly after load */
+/* 1. Hero progress bars */
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('taFill').style.width = '88%';
     document.getElementById('csFill').style.width = '72%';
-  }, 500);
+  }, 900);
 });
 
-/* Generic scroll reveal for .sr elements */
+/* 2. Scroll reveal for .sr elements */
 const srObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); srObs.unobserve(e.target); }
@@ -551,18 +548,88 @@ const srObs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.sr').forEach(el => srObs.observe(el));
 
-/* Level card stagger reveal per grid */
+/* 3. Level card stagger reveal */
 const lcObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.querySelectorAll('.level-card').forEach((card, i) => {
-        setTimeout(() => card.classList.add('lc-in'), i * 55);
+        setTimeout(() => card.classList.add('lc-in'), i * 60);
       });
       lcObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.05 });
+}, { threshold: 0.04 });
 document.querySelectorAll('.level-grid').forEach(g => lcObs.observe(g));
+
+/* 4. Career track nodes slide in left-to-right */
+const careerObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.ct-node, .ct-arrow').forEach((el, i) => {
+        setTimeout(() => el.classList.add('cn-in'), i * 80);
+      });
+      careerObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.career-track').forEach(t => careerObs.observe(t));
+
+/* 5. Why cards scale-in stagger */
+const whyObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.why-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('wc-in'), i * 80);
+      });
+      whyObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.why-grid').forEach(g => whyObs.observe(g));
+
+/* 6. 3D tilt on level cards (mouse) */
+document.querySelectorAll('.level-card:not(.crown-card)').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r  = card.getBoundingClientRect();
+    const cx = r.left + r.width  / 2;
+    const cy = r.top  + r.height / 2;
+    const rx = ((e.clientY - cy) / (r.height / 2)) * -6;
+    const ry = ((e.clientX - cx) / (r.width  / 2)) *  6;
+    card.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* 7. Referral reveal on TALKactive badge click */
+const taBadge   = document.getElementById('taBadge');
+const refReveal = document.getElementById('refReveal');
+if (taBadge && refReveal) {
+  taBadge.addEventListener('click', () => refReveal.classList.toggle('open'));
+}
+
+/* 8. Floating particles in hero */
+(function spawnParticles() {
+  const hero = document.querySelector('.st-hero');
+  if (!hero) return;
+  const colours = ['rgba(255,122,0,0.4)', 'rgba(99,102,241,0.35)', 'rgba(255,170,50,0.3)'];
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'st-particle';
+    const size = 3 + Math.random() * 5;
+    Object.assign(p.style, {
+      width:  size + 'px',
+      height: size + 'px',
+      left:   Math.random() * 100 + '%',
+      top:    (40 + Math.random() * 55) + '%',
+      background: colours[Math.floor(Math.random() * colours.length)],
+      animationDuration: (6 + Math.random() * 10) + 's',
+      animationDelay:    (Math.random() * 8) + 's',
+    });
+    hero.appendChild(p);
+  }
+})();
 </script>
 
 </body>

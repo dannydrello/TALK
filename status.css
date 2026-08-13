@@ -17,13 +17,22 @@
   min-height: 88vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 150px 24px 100px;
-  text-align: center;
+  padding: 24px 8% 80px;
   position: relative;
   overflow: hidden;
   color: #fff;
+}
+
+/* centred hero body, pushed below the nav */
+.st-hero-content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 72px;
+  position: relative;
 }
 
 .st-hero::before {
@@ -567,12 +576,162 @@
 .sr {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
 }
 .sr.visible { opacity: 1; transform: none; }
 
+/* ══════════════════════════════════════════════════
+   MODERN ANIMATIONS
+══════════════════════════════════════════════════ */
+
+/* Hero element entrances — sequential */
+@keyframes stHeroUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes stHeroScale {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.st-pill       { animation: stHeroUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+.st-hero-title { animation: stHeroUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s both; }
+.st-hero-sub   { animation: stHeroUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
+.st-sys-cards  { animation: stHeroScale 0.7s cubic-bezier(0.22,1,0.36,1) 0.58s both; }
+.st-hero-visual { animation: stHeroUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.78s both; }
+
+/* Shimmer on gradient title text */
+.ta-glow {
+  background-size: 200% auto;
+  animation: shimmerText 3s linear 1.2s infinite;
+}
+@keyframes shimmerText {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
+}
+
+/* Pill glow pulse */
+@keyframes pillPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,122,0,0); }
+  50%       { box-shadow: 0 0 0 10px rgba(255,122,0,0.07); }
+}
+.st-pill { animation: stHeroUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.1s both,
+                       pillPulse 3s ease-in-out 1.5s infinite; }
+
+/* Animated glowing border on crown cards */
+@keyframes crownGlow {
+  0%, 100% { border-color: rgba(245,158,11,0.45); box-shadow: 0 0 60px rgba(245,158,11,0.10), 0 24px 60px rgba(0,0,0,0.35); }
+  50%       { border-color: rgba(245,158,11,0.85); box-shadow: 0 0 120px rgba(245,158,11,0.22), 0 24px 60px rgba(0,0,0,0.35); }
+}
+.level-card.crown-card { animation: crownGlow 4s ease-in-out infinite; }
+
+@keyframes crownGlowCs {
+  0%, 100% { border-color: rgba(167,139,250,0.45); box-shadow: 0 0 60px rgba(167,139,250,0.10), 0 24px 60px rgba(0,0,0,0.35); }
+  50%       { border-color: rgba(167,139,250,0.85); box-shadow: 0 0 120px rgba(167,139,250,0.22), 0 24px 60px rgba(0,0,0,0.35); }
+}
+.crown-card.cs-crown { animation: crownGlowCs 4s ease-in-out infinite; }
+
+/* Level card reveal — spring easing */
+.level-card {
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+              transform 0.6s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.level-card.lc-in { opacity: 1; transform: none; }
+
+/* 3D tilt on hover (JS sets CSS vars) */
+.level-card {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Career track nodes — slide-in left to right */
+.ct-node, .ct-arrow {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.ct-node.cn-in, .ct-arrow.cn-in { opacity: 1; transform: none; }
+
+/* Why cards — scale + fade */
+.why-card {
+  opacity: 0;
+  transform: scale(0.9) translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1),
+              transform 0.5s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.25s, border-color 0.25s, background 0.25s;
+}
+.why-card.wc-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Demo card float */
+@keyframes demoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.demo-card { animation: demoFloat 6s ease-in-out 1s infinite; }
+
+/* CTA radial pulse */
+@keyframes ctaPulse {
+  0%, 100% { opacity: 0.10; transform: scale(1); }
+  50%       { opacity: 0.20; transform: scale(1.15); }
+}
+.st-cta::before { animation: ctaPulse 6s ease-in-out infinite; }
+
+/* Referral reveal on badge click */
+.ref-reveal {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #92400e;
+  background: rgba(245,158,11,0.08);
+  border-radius: 100px;
+  margin: 6px auto 0;
+  padding: 0 14px;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+  transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1),
+              opacity 0.3s ease,
+              padding 0.3s ease;
+}
+.ref-reveal.open {
+  max-height: 36px;
+  opacity: 1;
+  padding: 7px 14px;
+}
+
+.demo-badge.ta-b {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.demo-badge.ta-b:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(245,158,11,0.2); }
+
+/* Section headings — underline sweep on scroll-in */
+.st-sec-title { position: relative; }
+
+/* Floating particle dots in hero */
+.st-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: particleDrift linear infinite;
+}
+@keyframes particleDrift {
+  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.2); }
+}
+
 /* ── MOBILE ───────────────────────────────────────── */
 @media (max-width: 768px) {
+  .st-hero { padding: 24px 5% 60px; }
   .st-sys-card { width: 100%; }
 
   .level-grid {
@@ -600,7 +759,8 @@
 }
 
 @media (max-width: 480px) {
-  .st-hero { padding: 120px 20px 80px; }
+  .st-hero { padding: 16px 5% 60px; }
+  .st-hero-content-wrap { padding-top: 60px; }
   .st-section { padding: 72px 20px; }
   .crown-card .lc-title { font-size: 1.5rem; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
