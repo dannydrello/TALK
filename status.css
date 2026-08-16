@@ -729,6 +729,55 @@
   100% { opacity: 0; transform: translateY(-120px) scale(1.2); }
 }
 
+/* ── BADGE ICONS ──────────────────────────────────── */
+.lc-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.lc-badge svg {
+  width: 68px;
+  height: 68px;
+  filter: drop-shadow(0 4px 14px var(--badge-glow, rgba(255,122,0,0.3)));
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              filter 0.35s ease;
+}
+
+.level-card:hover .lc-badge svg {
+  transform: scale(1.14) translateY(-3px);
+  filter: drop-shadow(0 8px 24px var(--badge-glow, rgba(255,122,0,0.5)));
+}
+
+/* Orbital ring animations */
+.orb-dots {
+  transform-origin: 50px 50px;
+  animation: orbitSpin 10s linear infinite;
+}
+.orb-dots-r {
+  transform-origin: 50px 50px;
+  animation: orbitSpin 15s linear infinite reverse;
+}
+@keyframes orbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Crown badge overrides */
+.crown-card .lc-badge {
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.crown-card .lc-badge svg {
+  width: 96px;
+  height: 96px;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { filter: drop-shadow(0 0 10px var(--badge-glow, rgba(245,158,11,0.5))); }
+  50%       { filter: drop-shadow(0 0 30px var(--badge-glow, rgba(245,158,11,0.85))); }
+}
+
 /* ── MOBILE ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .st-hero { padding: 24px 5% 60px; }
