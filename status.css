@@ -778,6 +778,68 @@
   50%       { filter: drop-shadow(0 0 30px var(--badge-glow, rgba(245,158,11,0.85))); }
 }
 
+/* ── BADGE CHART SHOWCASE ─────────────────────────── */
+.badge-chart-section { text-align: center; }
+
+.badge-chart-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1.5px rgba(255,255,255,0.08),
+    0 40px 100px rgba(0,0,0,0.55);
+  max-width: 980px;
+  margin: 0 auto;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+}
+.badge-chart-wrap:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 0 0 1.5px rgba(255,122,0,0.2), 0 50px 120px rgba(0,0,0,0.6);
+}
+.badge-chart-img {
+  width: 100%;
+  display: block;
+}
+
+/* ── PROFILE PHONE DEMO ───────────────────────────── */
+.profile-phone-wrap {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile-phone-img {
+  width: 280px;
+  border-radius: 32px;
+  display: block;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.3),
+    0 0 0 6px rgba(255,122,0,0.1);
+  animation: demoFloat 6s ease-in-out 1s infinite;
+}
+
+.profile-badge-chips {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  background: rgba(10,14,26,0.92);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+}
+.pbc-ta { color: #f59e0b; }
+.pbc-sep { color: rgba(255,255,255,0.3); }
+.pbc-cs { color: #a78bfa; }
+
 /* ── MOBILE ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .st-hero { padding: 24px 5% 60px; }
@@ -803,6 +865,8 @@
   .ct-node { font-size: 0.78rem; padding: 7px 14px; }
   .demo-section { flex-direction: column; }
   .demo-card { max-width: 100%; }
+  .profile-phone-img { width: 100%; max-width: 320px; }
+  .badge-chart-wrap { border-radius: 14px; }
   .st-cta-btns { flex-direction: column; align-items: center; }
   .shv-row { grid-template-columns: 100px 1fr auto; gap: 10px; }
 }
