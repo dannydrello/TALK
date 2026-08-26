@@ -141,9 +141,10 @@ function updateStats() {
   const totalCountries = CAMPUS_DATA.filter(d => d.level === "country").length;
   const totalStates = CAMPUS_DATA.filter(d => d.level === "state").length;
   const totalUniversities = CAMPUS_DATA.filter(d => d.level === "university").length;
-  const totalStudents = CAMPUS_DATA
-    .filter(d => d.level === "university")
-    .reduce((sum, d) => sum + (d.students || 0), 0);
+  const countryEntry = CAMPUS_DATA.find(d => d.level === "country");
+  const totalStudents = countryEntry?.students ??
+    CAMPUS_DATA.filter(d => d.level === "university")
+      .reduce((sum, d) => sum + (d.students || 0), 0);
 
   // Update or create stats panel
   let statsPanel = document.querySelector(".globe-stats");

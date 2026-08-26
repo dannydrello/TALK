@@ -6,7 +6,8 @@ const CAMPUS_DATA = [
     name: "Nigeria",
     lat: 9.082,
     lng: 8.675,
-    count: 39
+    count: 39,
+    students: 1049
   },
 
   // ── STATES ───────────────────────────────────────────────────────
