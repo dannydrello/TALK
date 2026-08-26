@@ -11,17 +11,17 @@ const GLOBE = Globe()(container)
   .pointColor((d) => {
     if (d.level === "country") return "#ff8533";
     if (d.level === "state") return "#ff6600";
-    return "#ffaa33"; // universities
+    return "#ffe066"; // universities — bright yellow-orange, distinct from state pins
   })
   .pointRadius((d) => {
     if (d.level === "country") return 0.5;
-    if (d.level === "state") return 0.35;
-    return 0.2;
+    if (d.level === "state") return 0.3;
+    return 0.25; // universities — visible at all zoom levels
   })
   .pointAltitude((d) => {
     if (d.level === "country") return 0.05;
     if (d.level === "state") return 0.03;
-    return 0.01;
+    return 0.04; // universities — raised so they pop above the surface
   })
   .pointLabel((d) => generateLabel(d))
   .pointsData([])
@@ -31,7 +31,7 @@ const GLOBE = Globe()(container)
   });
 
 // Set initial camera position
-GLOBE.pointOfView({ lat: 20, lng: 0, altitude: 2.8 });
+GLOBE.pointOfView({ lat: 9, lng: 8.6, altitude: 2.2 });
 
 // Enhance lighting
 const scene = GLOBE.scene();
@@ -84,13 +84,13 @@ function updatePins() {
   let visiblePins;
 
   if (altitude > 2.5) {
-    // Show only countries when zoomed out
-    visiblePins = CAMPUS_DATA.filter(d => d.level === "country");
+    // Zoomed out: country marker + all university pins
+    visiblePins = CAMPUS_DATA.filter(d => d.level === "country" || d.level === "university");
   } else if (altitude > 1.3) {
-    // Show countries and states when medium zoom
-    visiblePins = CAMPUS_DATA.filter(d => d.level === "country" || d.level === "state");
+    // Medium zoom: add state markers too
+    visiblePins = CAMPUS_DATA.filter(d => d.level !== null);
   } else {
-    // Show all levels (states and universities) when zoomed in
+    // Zoomed in: states + universities (drop the large country blob)
     visiblePins = CAMPUS_DATA.filter(d => d.level === "state" || d.level === "university");
   }
 
