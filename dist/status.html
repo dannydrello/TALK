@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="logo.png">
+  <title>TALK Status — Build Your Influence & Recognition</title>
+  <meta name="description" content="Discover the TALK Status system. Build your TALKactive Status through referrals and earn your Community Status through followers and influence.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="status.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ4H9XMT4G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQ4H9XMT4G');
+  </script>
+</head>
+<body>
+
+<!-- ═══ HERO ═══════════════════════════════════════ -->
+<section class="st-hero">
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <img src="logo.png" alt="TALK Logo" class="logo-img">
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="globe.html">Globe</a>
+      <a href="status.html" class="nav-active">TALK Status</a>
+      <a href="help.html">Help &amp; Support</a>
+      <a href="legal.html">Legal</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn ghost login-btn">Login</a>
+      <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
+    </div>
+    <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="globe.html">Globe</a>
+    <a href="status.html">TALK Status</a>
+    <a href="help.html">Help &amp; Support</a>
+    <a href="legal.html">Legal</a>
+    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
+  </div>
+
+  <!-- HERO CONTENT -->
+  <div class="st-hero-content-wrap">
+    <div class="st-pill">⭐&nbsp;&nbsp;Status. Recognition. Opportunity.</div>
+
+    <h1 class="st-hero-title">
+      Your Status. Your <span class="ta-glow">Influence.</span><br>Your Journey.
+    </h1>
+
+    <p class="st-hero-sub">
+      On TALK, your activity and influence don't go unnoticed. Build your status, earn recognition, grow your community, and unlock opportunities as you progress.
+    </p>
+
+    <!-- Two system cards -->
+    <div class="st-sys-cards">
+      <div class="st-sys-card ta-card">
+        <span class="ssc-emoji">🗣️</span>
+        <div class="ssc-tag">TALKactive Status</div>
+        <h3 class="ssc-title">TALKactive Status</h3>
+        <p class="ssc-desc">Earned through referrals and contribution to TALK's growth. The more you help TALK grow, the higher you climb.</p>
+      </div>
+      <div class="st-sys-card cs-card">
+        <span class="ssc-emoji">🌍</span>
+        <div class="ssc-tag">Community Status</div>
+        <h3 class="ssc-title">TALK Community Status</h3>
+        <p class="ssc-desc">Earned through your followers and influence within the TALK community. Build your audience, build your status.</p>
+      </div>
+    </div>
+
+    <!-- Side-by-side progress visual -->
+    <div class="st-hero-visual">
+      <div class="shv-row ta">
+        <div class="shv-lbl">TALKactive</div>
+        <div class="shv-bar"><div class="shv-fill" id="taFill"></div></div>
+        <div class="shv-peak">👑 TALKATIVE</div>
+      </div>
+      <div class="shv-row cs">
+        <div class="shv-lbl">Community</div>
+        <div class="shv-bar"><div class="shv-fill" id="csFill"></div></div>
+        <div class="shv-peak">🌍 GLOBAL ICON</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ SECTION 1 — TALKactive ══════════════════════ -->
+<section class="st-section light" id="talkaactive">
+  <div class="st-inner">
+
+    <span class="st-sec-tag ta-tag sr">🗣️ TALKactive Status</span>
+    <h2 class="st-sec-title sr">The more value you create for TALK,<br>the higher you climb.</h2>
+    <p class="st-sec-desc sr">Your TALKactive Status is determined by the number of people you successfully refer to TALK. This is more than a referral system — it is a pathway to recognition, leadership, and potentially a career within TALK.</p>
+
+    <div class="level-grid ta-grid">
+
+      <!-- 01 TALKER -->
+      <div class="level-card" style="--badge-glow:rgba(139,148,163,0.45)">
+        <div class="lc-num-bg">01</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg1" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#9ba8ba"/><stop offset="100%" stop-color="#5e6b78"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg1)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">0 referrals</span>
+        <h3 class="lc-title">TALKER</h3>
+        <p class="lc-tagline">You're just getting started. Welcome to the movement.</p>
+        <ul class="lc-benefits">
+          <li>TALK digital badge</li>
+          <li>Access to the Talkative community</li>
+          <li>Referral tracking</li>
+        </ul>
+      </div>
+
+      <!-- 02 TALKER+ -->
+      <div class="level-card" style="--badge-glow:rgba(6,182,212,0.45)">
+        <div class="lc-num-bg">02</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg2" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#34d8f0"/><stop offset="100%" stop-color="#0891b2"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg2)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">1 – 10 referrals</span>
+        <h3 class="lc-title">TALKER+</h3>
+        <p class="lc-tagline">You're actively helping grow the TALK community.</p>
+        <ul class="lc-benefits">
+          <li>TALK stickers</li>
+          <li>Digital certificate</li>
+          <li>Leaderboard recognition</li>
+        </ul>
+      </div>
+
+      <!-- 03 ADVOCATE -->
+      <div class="level-card" style="--badge-glow:rgba(34,197,94,0.45)">
+        <div class="lc-num-bg">03</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg3" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg3)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">11 – 25 referrals</span>
+        <h3 class="lc-title">TALK ADVOCATE</h3>
+        <p class="lc-tagline">You're becoming a recognized voice for TALK.</p>
+        <ul class="lc-benefits">
+          <li>Exclusive TALK merchandise</li>
+          <li>Advocate badge</li>
+          <li>Early access to selected TALK campaigns</li>
+        </ul>
+      </div>
+
+      <!-- 04 AMBASSADOR -->
+      <div class="level-card" style="--badge-glow:rgba(234,179,8,0.45)">
+        <div class="lc-num-bg">04</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg4" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg4)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">26 – 50 referrals</span>
+        <h3 class="lc-title">TALK AMBASSADOR</h3>
+        <p class="lc-tagline">You've demonstrated consistent ability to grow TALK.</p>
+        <ul class="lc-benefits">
+          <li>Official TALK Ambassador status</li>
+          <li>Ambassador merchandise</li>
+          <li>Certificate of recognition</li>
+          <li>Invitations to selected campus activities</li>
+          <li>Opportunities to represent TALK at events</li>
+        </ul>
+      </div>
+
+      <!-- 05 LEADER -->
+      <div class="level-card" style="--badge-glow:rgba(249,115,22,0.45)">
+        <div class="lc-num-bg">05</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg5" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg5)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">51 – 100 referrals</span>
+        <h3 class="lc-title">TALK LEADER</h3>
+        <p class="lc-tagline">You're now a serious TALK growth driver.</p>
+        <ul class="lc-benefits">
+          <li>Leadership badge</li>
+          <li>Premium TALK merchandise</li>
+          <li>Opportunity to recruit and manage junior Talkers</li>
+          <li>Priority consideration for campus leadership roles</li>
+          <li>Recognition from TALK management</li>
+        </ul>
+      </div>
+
+      <!-- 06 CAPTAIN -->
+      <div class="level-card" style="--badge-glow:rgba(59,130,246,0.45)">
+        <div class="lc-num-bg">06</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg6" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg6)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">101 – 150 referrals</span>
+        <h3 class="lc-title">TALK CAPTAIN</h3>
+        <p class="lc-tagline">You're among TALK's strongest grassroots growth leaders.</p>
+        <ul class="lc-benefits">
+          <li>Exclusive Captain merchandise</li>
+          <li>Lead TALK campaigns and activations</li>
+          <li>Manage teams of Talkers</li>
+          <li>Access to selected leadership events</li>
+          <li>Priority consideration for internships and paid opportunities</li>
+        </ul>
+      </div>
+
+      <!-- 07 EXECUTIVE -->
+      <div class="level-card" style="--badge-glow:rgba(168,85,247,0.45)">
+        <div class="lc-num-bg">07</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg7" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg7)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.92)">T</text></svg></div>
+        <span class="lc-range">151 – 300 referrals</span>
+        <h3 class="lc-title">TALK EXECUTIVE</h3>
+        <p class="lc-tagline">You've demonstrated exceptional ability to drive TALK's growth.</p>
+        <ul class="lc-benefits">
+          <li>Exclusive Executive status and merchandise</li>
+          <li>Lead major campus growth campaigns</li>
+          <li>Manage Ambassador teams</li>
+          <li>Direct access to TALK leadership</li>
+          <li>Eligibility for the TALK Marketing Department pathway</li>
+          <li>Strong consideration for internships and paid opportunities</li>
+        </ul>
+      </div>
+
+      <!-- 👑 TALKATIVE — CROWN -->
+      <div class="level-card crown-card" style="--badge-glow:rgba(245,158,11,0.7)">
+        <div class="lc-body">
+          <span class="lc-range">300+ referrals</span>
+          <h3 class="lc-title">TALKATIVE 👑</h3>
+          <p class="lc-tagline">This is the highest TALKactive Status. You've helped bring 300+ people into the TALK community. You've proven your ability to influence, communicate, and grow a community.</p>
+          <ul class="lc-benefits">
+            <li>Exclusive TALKATIVE merchandise</li>
+            <li>Official TALKATIVE badge</li>
+            <li>Certificate of recognition</li>
+            <li>Leadership opportunities across TALK campaigns</li>
+            <li>Direct involvement in major TALK initiatives</li>
+            <li>Exclusive TALK events</li>
+            <li>Eligibility to enter the TALK Marketing Department pathway</li>
+            <li>Consideration for paid roles and long-term opportunities within TALK</li>
+          </ul>
+        </div>
+        <div class="crown-aside">
+          <div class="lc-badge"><svg viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hg8" x1="0" y1="0" x2="100" y2="116" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fde68a"/><stop offset="50%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient><linearGradient id="hg8s" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fde68a" stop-opacity="0.9"/><stop offset="100%" stop-color="#fff" stop-opacity="0.15"/></linearGradient></defs><polygon points="50,4 96,28 96,88 50,112 4,88 4,28" fill="url(#hg8)" stroke="url(#hg8s)" stroke-width="2.5"/><polygon points="50,16 84,34 84,82 50,100 16,82 16,34" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/><text x="50" y="73" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="46" fill="rgba(255,255,255,0.97)">T</text><circle cx="50" cy="4" r="4" fill="#fde68a" opacity="0.9"/><circle cx="96" cy="28" r="3.5" fill="#fde68a" opacity="0.7"/><circle cx="96" cy="88" r="3.5" fill="#fde68a" opacity="0.7"/><circle cx="50" cy="112" r="4" fill="#fde68a" opacity="0.9"/><circle cx="4" cy="88" r="3.5" fill="#fde68a" opacity="0.7"/><circle cx="4" cy="28" r="3.5" fill="#fde68a" opacity="0.7"/></svg></div>
+          <div class="crown-label-tag">TALKATIVE</div>
+        </div>
+      </div>
+
+    </div><!-- /ta-grid -->
+
+    <!-- CAREER PATH -->
+    <div class="career-box sr">
+      <h3>Your TALKactive journey doesn't end at TALKATIVE.</h3>
+      <p class="career-box-sub">Once you become a TALKATIVE, your career journey within TALK can begin. The path forward is open — but it is earned through what you do, not just how many people you refer.</p>
+
+      <div class="career-track">
+        <span class="ct-node ct-start">👑 TALKATIVE</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Marketing Associate</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Marketing Executive</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Marketing Lead</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Marketing Manager</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Head of Marketing</span>
+        <span class="ct-arrow">→</span>
+        <span class="ct-node">Marketing Director</span>
+      </div>
+
+      <div class="career-important">
+        <p><strong>Important:</strong> Referrals determine your TALKactive Status, but they do <em>not</em> automatically determine promotions within the company. Career progression after becoming a TALKATIVE is based on:</p>
+        <div class="career-factors">
+          <span class="cf-chip">Performance</span>
+          <span class="cf-chip">Leadership</span>
+          <span class="cf-chip">Skills</span>
+          <span class="cf-chip">Responsibilities</span>
+          <span class="cf-chip">Consistency</span>
+          <span class="cf-chip">Impact</span>
+          <span class="cf-chip">Contribution to TALK</span>
+        </div>
+      </div>
+
+      <p class="career-quote">Referrals get you noticed. Your work takes you higher.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ BADGE SYSTEM VISUAL ══════════════════════════ -->
+<section class="st-section dark badge-chart-section" style="padding:80px 24px">
+  <div class="st-inner">
+    <span class="st-sec-tag sr" style="color:var(--ta);display:block;text-align:center;margin-bottom:12px">📛 Official Badge System</span>
+    <h2 class="st-sec-title sr" style="color:#fff;text-align:center;margin-bottom:14px">Meet Your Status Badges</h2>
+    <p class="st-sec-desc sr" style="text-align:center;margin:0 auto 48px">Each level earns you a distinct, officially designed badge — displayed right on your TALK profile for the world to see.</p>
+    <div class="badge-chart-wrap sr">
+      <img src="Images/TALK STATUS BADGE.png" alt="TALK Status Badge System — all 22 levels" class="badge-chart-img" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — Community Status ════════════════ -->
+<section class="st-section warm" id="community-status">
+  <div class="st-inner">
+
+    <span class="st-sec-tag cs-tag sr">🌍 TALK Community Status</span>
+    <h2 class="st-sec-title sr">Your influence matters.</h2>
+    <p class="st-sec-desc sr">TALK Community Status is based on your follower count and represents your influence within the TALK ecosystem. This is completely separate from TALKactive Status — someone can have a high Community Status without a high TALKactive Status, and vice versa.</p>
+
+    <div class="level-grid cs-grid">
+
+      <div class="level-card" style="--badge-glow:rgba(100,116,139,0.4)">
+        <div class="lc-num-bg">01</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg1" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#64748b"/><stop offset="100%" stop-color="#1e293b"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#64748b" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#64748b" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg1)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#64748b" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#64748b" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#64748b" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#64748b" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">0 – 99 followers</span>
+        <h3 class="lc-title">TALK COMMUNITY MEMBER</h3>
+        <p class="lc-tagline">You're beginning to build your presence on TALK.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(6,182,212,0.4)">
+        <div class="lc-num-bg">02</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg2" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0891b2"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg2)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#22d3ee" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#22d3ee" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#22d3ee" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#22d3ee" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">100 – 499 followers</span>
+        <h3 class="lc-title">TALK SOCIAL</h3>
+        <p class="lc-tagline">You're building your audience and presence.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(34,197,94,0.4)">
+        <div class="lc-num-bg">03</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg3" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#4ade80" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg3)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#4ade80" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#4ade80" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#4ade80" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#4ade80" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">500 – 999 followers</span>
+        <h3 class="lc-title">CAMPUS CONNECTOR</h3>
+        <p class="lc-tagline">You're beginning to influence your immediate community.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(234,179,8,0.4)">
+        <div class="lc-num-bg">04</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg4" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#fde047" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg4)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#fde047" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#fde047" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#fde047" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#fde047" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">1K – 2.4K followers</span>
+        <h3 class="lc-title">CAMPUS VOICE</h3>
+        <p class="lc-tagline">Your voice is reaching a growing campus audience.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(249,115,22,0.4)">
+        <div class="lc-num-bg">05</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg5" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#fb923c" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#fb923c" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg5)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#fb923c" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#fb923c" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#fb923c" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#fb923c" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">2.5K – 4.9K followers</span>
+        <h3 class="lc-title">CAMPUS INFLUENCER</h3>
+        <p class="lc-tagline">You have significant influence within your campus community.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(236,72,153,0.4)">
+        <div class="lc-num-bg">06</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg6" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#be185d"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#f472b6" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg6)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#f472b6" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#f472b6" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#f472b6" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#f472b6" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">5K – 9.9K followers</span>
+        <h3 class="lc-title">CAMPUS STAR</h3>
+        <p class="lc-tagline">You're becoming one of the more visible personalities within your campus community.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(139,92,246,0.4)">
+        <div class="lc-num-bg">07</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg7" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#6d28d9"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#c084fc" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg7)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#c084fc" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#c084fc" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#c084fc" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#c084fc" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">10K – 24.9K followers</span>
+        <h3 class="lc-title">CAMPUS ICON</h3>
+        <p class="lc-tagline">You have major influence at the campus level.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(20,184,166,0.4)">
+        <div class="lc-num-bg">08</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg8" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#2dd4bf"/><stop offset="100%" stop-color="#0d9488"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#2dd4bf" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#2dd4bf" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg8)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#2dd4bf" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#2dd4bf" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#2dd4bf" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#2dd4bf" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">25K – 49.9K followers</span>
+        <h3 class="lc-title">COMMUNITY INFLUENCER</h3>
+        <p class="lc-tagline">Your influence is beginning to extend beyond a single campus.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(132,204,22,0.4)">
+        <div class="lc-num-bg">09</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg9" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#a3e635"/><stop offset="100%" stop-color="#4d7c0f"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#a3e635" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#a3e635" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg9)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#a3e635" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#a3e635" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#a3e635" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#a3e635" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">50K – 99.9K followers</span>
+        <h3 class="lc-title">COMMUNITY LEADER</h3>
+        <p class="lc-tagline">You have significant influence across multiple communities.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(245,158,11,0.4)">
+        <div class="lc-num-bg">10</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg10" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#b45309"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg10)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#fbbf24" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#fbbf24" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#fbbf24" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#fbbf24" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">100K – 249K followers</span>
+        <h3 class="lc-title">TALK PUBLIC FIGURE</h3>
+        <p class="lc-tagline">You are a major personality within the TALK ecosystem.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(244,63,94,0.4)">
+        <div class="lc-num-bg">11</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg11" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#be123c"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#f87171" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg11)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#f87171" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#f87171" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#f87171" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#f87171" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">250K – 499K followers</span>
+        <h3 class="lc-title">TALK SUPERSTAR</h3>
+        <p class="lc-tagline">You have massive influence across the TALK network.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(168,85,247,0.4)">
+        <div class="lc-num-bg">12</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg12" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7e22ce"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#c084fc" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg12)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#c084fc" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#c084fc" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#c084fc" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#c084fc" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">500K – 999K followers</span>
+        <h3 class="lc-title">TALK ICON</h3>
+        <p class="lc-tagline">You are one of the most influential people within the TALK ecosystem.</p>
+      </div>
+
+      <div class="level-card" style="--badge-glow:rgba(59,130,246,0.4)">
+        <div class="lc-num-bg">13</div>
+        <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg13" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.28"/><circle cx="50" cy="50" r="38" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.45"/><circle cx="50" cy="50" r="28" fill="url(#cg13)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.92)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="4" fill="#60a5fa" opacity="0.8"/><circle cx="96" cy="50" r="4" fill="#60a5fa" opacity="0.8"/><circle cx="50" cy="96" r="4" fill="#60a5fa" opacity="0.8"/><circle cx="4" cy="50" r="4" fill="#60a5fa" opacity="0.8"/></g></svg></div>
+        <span class="lc-range">1,000,000 followers</span>
+        <h3 class="lc-title">TALK LEGEND</h3>
+        <p class="lc-tagline">Exceptional influence across the TALK community.</p>
+      </div>
+
+      <!-- 🌍 GLOBAL ICON — CROWN -->
+      <div class="level-card crown-card cs-crown" style="--badge-glow:rgba(167,139,250,0.7)">
+        <div class="lc-body">
+          <span class="lc-range">1,000,000+ followers</span>
+          <h3 class="lc-title">TALK GLOBAL ICON</h3>
+          <p class="lc-tagline">Extraordinary influence across the TALK ecosystem. You are among the most followed, most recognized, and most impactful people on TALK.</p>
+        </div>
+        <div class="crown-aside">
+          <div class="lc-badge"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="cg14" cx="40%" cy="30%" r="70%"><stop offset="0%" stop-color="#22d3ee"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#7c3aed"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.4"/><circle cx="50" cy="50" r="38" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.5"/><circle cx="50" cy="50" r="28" fill="url(#cg14)"/><text x="50" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" fill="rgba(255,255,255,0.97)">T</text><g class="orb-dots"><circle cx="50" cy="4" r="5" fill="#22d3ee" opacity="0.9"/><circle cx="96" cy="50" r="5" fill="#818cf8" opacity="0.9"/><circle cx="50" cy="96" r="5" fill="#22d3ee" opacity="0.9"/><circle cx="4" cy="50" r="5" fill="#818cf8" opacity="0.9"/></g><g class="orb-dots-r"><circle cx="85" cy="15" r="3.5" fill="#c084fc" opacity="0.7"/><circle cx="85" cy="85" r="3.5" fill="#22d3ee" opacity="0.7"/><circle cx="15" cy="85" r="3.5" fill="#c084fc" opacity="0.7"/><circle cx="15" cy="15" r="3.5" fill="#22d3ee" opacity="0.7"/></g></svg></div>
+          <div class="crown-label-tag">GLOBAL ICON</div>
+        </div>
+      </div>
+
+    </div><!-- /cs-grid -->
+
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — Both Together ═══════════════════ -->
+<section class="st-section light">
+  <div class="st-inner">
+
+    <h2 class="st-sec-title sr">Two Ways to Build<br>Your Status</h2>
+    <p class="st-sec-desc sr">Your TALKactive Status and Community Status are completely independent. You can excel at both, or focus on one. Progress in both simultaneously — or let one lead. It's your journey.</p>
+
+    <div class="demo-section">
+
+      <div class="profile-phone-wrap sr">
+        <img src="Images/Profilepic.png" alt="TALK profile showing TALKATIVE and CAMPUS ICON badges" class="profile-phone-img">
+        <div class="profile-badge-chips">
+          <span class="pbc-ta">👑 TALKATIVE</span>
+          <span class="pbc-sep">·</span>
+          <span class="pbc-cs">🔵 CAMPUS ICON</span>
+        </div>
+      </div>
+
+      <div class="demo-info">
+        <div class="di-row sr" style="transition-delay:0.1s">
+          <div class="di-type ta-t">TALKactive Status</div>
+          <div class="di-status ta-s">TALKATIVE 👑</div>
+          <p class="di-basis">Based on 327 referrals</p>
+        </div>
+        <div class="di-row sr" style="transition-delay:0.18s">
+          <div class="di-type cs-t">Community Status</div>
+          <div class="di-status cs-s">CAMPUS ICON</div>
+          <p class="di-basis">10K – 24.9K followers bracket</p>
+        </div>
+        <div class="demo-note sr" style="transition-delay:0.26s">
+          <strong>Your TALKactive Status</strong> shows how much you've contributed to growing TALK. <strong>Your Community Status</strong> shows how much influence you've built within TALK. Both are visible on your profile — and both matter in different ways.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — Why Status Matters ══════════════ -->
+<section class="st-section dark">
+  <div class="st-inner">
+
+    <h2 class="st-sec-title sr" style="text-align:center;margin-bottom:14px;">More Than a Badge</h2>
+    <p class="st-sec-desc sr" style="text-align:center;margin:0 auto 60px;">TALK Status isn't simply decoration. It represents real recognition, real opportunities, and real pathways.</p>
+
+    <div class="why-grid">
+      <div class="why-card sr" style="transition-delay:0s">
+        <span class="why-icon">🏆</span>
+        <h4>Recognition</h4>
+        <p>Your contributions and influence are visible to your campus community and to TALK itself. Your status speaks before you do.</p>
+      </div>
+      <div class="why-card sr" style="transition-delay:0.08s">
+        <span class="why-icon">🚀</span>
+        <h4>Opportunity</h4>
+        <p>Higher statuses unlock exclusive opportunities — from merchandise to events, campaigns to internships and paid roles.</p>
+      </div>
+      <div class="why-card sr" style="transition-delay:0.16s">
+        <span class="why-icon">👥</span>
+        <h4>Leadership</h4>
+        <p>Top TALKactive members can take on greater responsibilities — managing teams, leading campaigns, shaping TALK's growth.</p>
+      </div>
+      <div class="why-card sr" style="transition-delay:0.24s">
+        <span class="why-icon">🌐</span>
+        <h4>Community</h4>
+        <p>Build an audience and become a recognized voice within your campus and beyond. Your influence compounds over time.</p>
+      </div>
+      <div class="why-card sr" style="transition-delay:0.32s">
+        <span class="why-icon">💼</span>
+        <h4>Career</h4>
+        <p>TALKATIVEs can enter the TALK talent and marketing pipeline. Your status can be the beginning of a real career.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═════════════════════════════════== -->
+<div class="st-cta">
+  <h2 class="sr">What's Your TALK Status?</h2>
+  <p class="sr" style="transition-delay:0.1s">Start building yours today.</p>
+  <div class="st-cta-btns sr" style="transition-delay:0.2s">
+    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Join TALK</a>
+    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn ghost">Explore the Community</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ════════════════════════════════════== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="logo.png" class="footer-logo" alt="TALK Logo">
+      <p>Welcome to the world of students.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="help.html">Help Center</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Safety</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="legal.html">Privacy</a></li>
+        <li><a href="legal.html">Terms</a></li>
+        <li><a href="account-deletion.html">Account Deletion</a></li>
+        <li><a href="https://web.talk-wide.com/child-safety.html">Child Safety</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Social</h3>
+      <div class="social-icons">
+        <a href="https://x.com/TALKSUPP0101" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/info_talkwide/" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/109144219/admin/dashboard/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="download-footer">
+    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="download-btn">Download TALK</a>
+  </div>
+  <p class="footer-bottom">© 2026 TALK. All rights reserved.</p>
+</footer>
+
+<script src="scrpit.js"></script>
+<script>
+/* ── STATUS PAGE JS ──────────────────────────────── */
+
+/* 1. Hero progress bars */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('taFill').style.width = '88%';
+    document.getElementById('csFill').style.width = '72%';
+  }, 900);
+});
+
+/* 2. Scroll reveal for .sr elements */
+const srObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); srObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.sr').forEach(el => srObs.observe(el));
+
+/* 3. Level card stagger reveal */
+const lcObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.level-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('lc-in'), i * 60);
+      });
+      lcObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.04 });
+document.querySelectorAll('.level-grid').forEach(g => lcObs.observe(g));
+
+/* 4. Career track nodes slide in left-to-right */
+const careerObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.ct-node, .ct-arrow').forEach((el, i) => {
+        setTimeout(() => el.classList.add('cn-in'), i * 80);
+      });
+      careerObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.career-track').forEach(t => careerObs.observe(t));
+
+/* 5. Why cards scale-in stagger */
+const whyObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.why-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('wc-in'), i * 80);
+      });
+      whyObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.why-grid').forEach(g => whyObs.observe(g));
+
+/* 6. 3D tilt on level cards (mouse) */
+document.querySelectorAll('.level-card:not(.crown-card)').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r  = card.getBoundingClientRect();
+    const cx = r.left + r.width  / 2;
+    const cy = r.top  + r.height / 2;
+    const rx = ((e.clientY - cy) / (r.height / 2)) * -6;
+    const ry = ((e.clientX - cx) / (r.width  / 2)) *  6;
+    card.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* 7. Referral reveal on TALKactive badge click */
+const taBadge   = document.getElementById('taBadge');
+const refReveal = document.getElementById('refReveal');
+if (taBadge && refReveal) {
+  taBadge.addEventListener('click', () => refReveal.classList.toggle('open'));
+}
+
+/* 8. Floating particles in hero */
+(function spawnParticles() {
+  const hero = document.querySelector('.st-hero');
+  if (!hero) return;
+  const colours = ['rgba(255,122,0,0.4)', 'rgba(99,102,241,0.35)', 'rgba(255,170,50,0.3)'];
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'st-particle';
+    const size = 3 + Math.random() * 5;
+    Object.assign(p.style, {
+      width:  size + 'px',
+      height: size + 'px',
+      left:   Math.random() * 100 + '%',
+      top:    (40 + Math.random() * 55) + '%',
+      background: colours[Math.floor(Math.random() * colours.length)],
+      animationDuration: (6 + Math.random() * 10) + 's',
+      animationDelay:    (Math.random() * 8) + 's',
+    });
+    hero.appendChild(p);
+  }
+})();
+</script>
+
+</body>
+</html>
