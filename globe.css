@@ -57,9 +57,24 @@ body {
 
 .globe-section {
   flex: 1;
+  min-height: 0;
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(10, 14, 39, 1) 0%, rgba(25, 30, 65, 0.5) 50%, rgba(10, 14, 39, 1) 100%);
+}
+
+.globe-footer {
+  flex: 0 0 auto;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.globe-footer .footer-column h3 {
+  margin: 0 0 4px;
+}
+
+.globe-footer .social-icons {
+  justify-content: center;
 }
 
 #globe-container {

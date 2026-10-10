@@ -114,7 +114,7 @@ function generateLabel(d) {
     return `
       <div class="tooltip">
         <strong>${d.name}</strong><br/>
-        📍 ${d.count} campuses live
+        📍 ${d.count}+ universities live
       </div>
     `;
   }
@@ -140,8 +140,9 @@ function generateLabel(d) {
 function updateStats() {
   const totalCountries = CAMPUS_DATA.filter(d => d.level === "country").length;
   const totalStates = CAMPUS_DATA.filter(d => d.level === "state").length;
-  const totalUniversities = CAMPUS_DATA.filter(d => d.level === "university").length;
   const countryEntry = CAMPUS_DATA.find(d => d.level === "country");
+  const totalUniversities = countryEntry?.count ??
+    CAMPUS_DATA.filter(d => d.level === "university").length;
   const totalStudents = countryEntry?.students ??
     CAMPUS_DATA.filter(d => d.level === "university")
       .reduce((sum, d) => sum + (d.students || 0), 0);
@@ -165,11 +166,11 @@ function updateStats() {
     </div>
     <div class="stats-item">
       <span class="stats-icon">🎓</span>
-      <span class="stats-text"><span class="stats-number">${totalUniversities}</span><span class="stats-label">Universities</span></span>
+      <span class="stats-text"><span class="stats-number">${totalUniversities}+</span><span class="stats-label">Universities</span></span>
     </div>
     <div class="stats-item">
       <span class="stats-icon">👥</span>
-      <span class="stats-text"><span class="stats-number">${totalStudents >= 1000000 ? (totalStudents/1000000).toFixed(1)+'M' : totalStudents >= 1000 ? (totalStudents/1000).toFixed(1)+'K' : totalStudents.toLocaleString()}</span><span class="stats-label">Students</span></span>
+      <span class="stats-text"><span class="stats-number">${totalStudents.toLocaleString()}+</span><span class="stats-label">Students</span></span>
     </div>
   `;
 }

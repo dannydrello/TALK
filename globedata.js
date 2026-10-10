@@ -6,8 +6,8 @@ const CAMPUS_DATA = [
     name: "Nigeria",
     lat: 9.082,
     lng: 8.675,
-    count: 39,
-    students: 1049
+    count: 60,
+    students: 3600
   },
 
   // ── STATES ───────────────────────────────────────────────────────
@@ -36,83 +36,67 @@ const CAMPUS_DATA = [
   // ── UNIVERSITIES ─────────────────────────────────────────────────
 
   // Abia State (4)
-  { level: "university", name: "Abia State University, Uturu",                          lat: 5.8167,  lng: 7.4333,  state: "Abia State" },
-  { level: "university", name: "Clifford University, Owerrinta",                        lat: 5.4667,  lng: 7.3667,  state: "Abia State" },
-  { level: "university", name: "Michael Okpara University of Agriculture, Umudike",     lat: 5.4500,  lng: 7.5400,  state: "Abia State" },
-  { level: "university", name: "Rhema University, Aba",                                 lat: 5.1073,  lng: 7.3672,  state: "Abia State" },
-
-  // Adamawa State (2)
-  { level: "university", name: "Adamawa State University, Mubi",                        lat: 10.2667, lng: 13.2667, state: "Adamawa State" },
-  { level: "university", name: "Modibbo Adamawa University of Technology, Yola",        lat: 9.2340,  lng: 12.4570, state: "Adamawa State" },
-
-  // Akwa Ibom State (1)
-  { level: "university", name: "University of Uyo",                                     lat: 5.0102,  lng: 7.9392,  state: "Akwa Ibom State" },
-
-  // Bayelsa State (1)
-  { level: "university", name: "Federal University, Otuoke",                            lat: 4.9667,  lng: 6.1333,  state: "Bayelsa State" },
-
-  // Borno State (2)
-  { level: "university", name: "Borno State College of Health Technology, Maiduguri",   lat: 11.8480, lng: 13.1550, state: "Borno State" },
-  { level: "university", name: "Nigerian Army University, Biu",                         lat: 10.6167, lng: 12.1917, state: "Borno State" },
-
-  // Cross River State (2)
-  { level: "university", name: "Cross River University of Technology (CRUTECH)",        lat: 4.9757,  lng: 8.3417,  state: "Cross River State" },
-  { level: "university", name: "University of Calabar",                                 lat: 4.9543,  lng: 8.3570,  state: "Cross River State" },
-
-  // Delta State (1)
-  { level: "university", name: "Delta State University, Abraka",                        lat: 5.7667,  lng: 6.0833,  state: "Delta State" },
-
-  // Ebonyi State (2)
-  { level: "university", name: "Alex Ekwueme Federal University, Ndufu-Alike",          lat: 6.0333,  lng: 8.1000,  state: "Ebonyi State" },
-  { level: "university", name: "Evangel University Akaeze, Okpoto",                    lat: 5.8833,  lng: 7.9333,  state: "Ebonyi State" },
-
-  // Enugu State (6)
-  { level: "university", name: "Caritas University, Amorji-Nike",                       lat: 6.4840,  lng: 7.5540,  state: "Enugu State" },
-  { level: "university", name: "Coal City University, Enugu",                           lat: 6.4400,  lng: 7.5000,  state: "Enugu State" },
-  { level: "university", name: "Enugu State College of Education (Technical)",          lat: 6.4500,  lng: 7.4700,  state: "Enugu State" },
-  { level: "university", name: "Enugu State University of Science and Technology (ESUT)", lat: 6.3500, lng: 7.5500, state: "Enugu State" },
-  { level: "university", name: "University of Nigeria, Enugu Campus (UNEC)",            lat: 6.4269,  lng: 7.5096,  state: "Enugu State", students: 450 },
-  { level: "university", name: "University of Nigeria, Nsukka (UNN)",                   lat: 6.8702,  lng: 7.3929,  state: "Enugu State" },
-
-  // FCT Abuja (2)
-  { level: "university", name: "FCT College of Health Technology, Gwagwalada",          lat: 8.9439,  lng: 7.0878,  state: "FCT Abuja" },
-  { level: "university", name: "National Open University of Nigeria (NOUN)",             lat: 9.0730,  lng: 7.3700,  state: "FCT Abuja" },
-
-  // Gombe State (1)
-  { level: "university", name: "Federal College of Education (Technical), Gombe",       lat: 10.2920, lng: 11.1730, state: "Gombe State" },
-
-  // Imo State (1)
-  { level: "university", name: "Imo State University, Owerri",                          lat: 5.4898,  lng: 7.0297,  state: "Imo State" },
-
-  // Kaduna State (1)
-  { level: "university", name: "Kaduna State College of Nursing and Midwifery",         lat: 10.5260, lng: 7.4398,  state: "Kaduna State" },
-
-  // Kwara State (1)
-  { level: "university", name: "University of Ilorin",                                  lat: 8.4799,  lng: 4.6776,  state: "Kwara State" },
-
-  // Lagos State (3)
-  { level: "university", name: "Caleb University",                                      lat: 6.6333,  lng: 3.6833,  state: "Lagos State" },
-  { level: "university", name: "Lagos State University (LASU)",                         lat: 6.4714,  lng: 3.1904,  state: "Lagos State" },
-  { level: "university", name: "University of Lagos (UNILAG)",                          lat: 6.5158,  lng: 3.3913,  state: "Lagos State" },
-
-  // Niger State (2)
-  { level: "university", name: "Federal University of Technology, Minna",               lat: 9.6139,  lng: 6.5569,  state: "Niger State" },
-  { level: "university", name: "School of Nursing, Bida",                               lat: 9.0833,  lng: 6.0167,  state: "Niger State" },
-
-  // Ogun State (3)
-  { level: "university", name: "College of Nursing Sciences, Ijebu-Ode",               lat: 6.8189,  lng: 3.9176,  state: "Ogun State" },
-  { level: "university", name: "Ogun State College of Health Technology, Ilese-Ijebu",  lat: 6.7333,  lng: 3.8000,  state: "Ogun State" },
-  { level: "university", name: "Tai Solarin University of Education, Ijagun",           lat: 6.8967,  lng: 3.9283,  state: "Ogun State" },
-
-  // Ondo State (1)
-  { level: "university", name: "Elizade University, Ilara-Mokin",                       lat: 7.3500,  lng: 5.1000,  state: "Ondo State" },
-
-  // Rivers State (1)
-  { level: "university", name: "University of Port Harcourt",                           lat: 4.8980,  lng: 6.9050,  state: "Rivers State" },
-
-  // Yobe State (1)
-  { level: "university", name: "Yobe State University, Damaturu",                      lat: 11.7500, lng: 11.9600, state: "Yobe State" },
-
-  // Zamfara State (1)
-  { level: "university", name: "Zamfara State University, Talata Mafara",               lat: 12.5500, lng: 6.0667,  state: "Zamfara State" },
+  { level: "university", name: "Abia State School of Nursing, Amachara", lat: 5.4527, lng: 7.5248, state: "Abia State" },
+  { level: "university", name: "Abia State University, Uturu", lat: 5.4527, lng: 7.5248, state: "Abia State" },
+  { level: "university", name: "Adamawa State University, Mubi", lat: 9.3266, lng: 12.3984, state: "Adamawa State" },
+  { level: "university", name: "Akwa Ibom State University, Mkpat-Enin", lat: 5.0377, lng: 7.9128, state: "Akwa Ibom State" },
+  { level: "university", name: "Alex Ekwueme Federal University, Ndufu-Alike", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Borno State College of Health Technology, Maiduguri", lat: 11.8311, lng: 13.1510, state: "Borno State" },
+  { level: "university", name: "Caleb University", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Caritas University, Amorji-Nike", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Clifford University, Owerrinta", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Coal City University, Enugu", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "College of Nursing Sciences, Ijebu-Ode", lat: 6.9075, lng: 3.5813, state: "Ogun State" },
+  { level: "university", name: "College of Nursing Sciences, Kontagora", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Covenant Polytechnic, Aba", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Cross River University of Technology (CRUTECH)", lat: 4.9589, lng: 8.3269, state: "Cross River State" },
+  { level: "university", name: "Delta State University, Abraka", lat: 5.7040, lng: 6.1360, state: "Delta State" },
+  { level: "university", name: "Delta State University of Science and Technology, Ozoro", lat: 5.7040, lng: 6.1360, state: "Delta State" },
+  { level: "university", name: "Ebonyi State College of Education, Ikwo", lat: 6.2649, lng: 8.0137, state: "Ebonyi State" },
+  { level: "university", name: "Elizade University, Ilara-Mokin", lat: 7.2508, lng: 5.1931, state: "Ondo State" },
+  { level: "university", name: "Emmanuel Alayande College of Education, Oyo", lat: 7.2508, lng: 5.1931, state: "Ondo State" },
+  { level: "university", name: "Enugu State College of Education (Technical)", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "Enugu State University of Science and Technology (ESUT)", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "Evangel University Akaeze, Okpoto", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "FCT College of Health Technology, Gwagwalada", lat: 9.0765, lng: 7.3986, state: "FCT Abuja" },
+  { level: "university", name: "Federal College of Education (Technical), Gombe", lat: 10.2924, lng: 11.1670, state: "Gombe State" },
+  { level: "university", name: "Federal College of Orthopaedic Technology, Igbobi", lat: 6.5244, lng: 3.3792, state: "Lagos State" },
+  { level: "university", name: "Federal University of Health Sciences, Otukpo", lat: 7.1907, lng: 8.1329, state: "Benue State" },
+  { level: "university", name: "Federal University of Technology, Minna", lat: 9.0820, lng: 6.0029, state: "Niger State" },
+  { level: "university", name: "Federal University, Otuoke", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Gregory University, Uturu", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Imo State University, Owerri", lat: 5.4812, lng: 7.0332, state: "Imo State" },
+  { level: "university", name: "Institute of Management and Technology (IMT), Enugu", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "Jigawa State College of Health Technology, Jahun", lat: 12.4460, lng: 9.7233, state: "Jigawa State" },
+  { level: "university", name: "Kaduna State College of Nursing and Midwifery", lat: 10.5124, lng: 7.4310, state: "Kaduna State" },
+  { level: "university", name: "Lagos State University (LASU)", lat: 6.5244, lng: 3.3792, state: "Lagos State" },
+  { level: "university", name: "Lagos State University, Ojo", lat: 6.5244, lng: 3.3792, state: "Lagos State" },
+  { level: "university", name: "Legacy University, Okija", lat: 6.2758, lng: 7.0068, state: "Anambra State" },
+  { level: "university", name: "Michael Okpara University of Agriculture, Umudike", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Modibbo Adamawa University of Technology, Yola", lat: 9.3266, lng: 12.3984, state: "Adamawa State" },
+  { level: "university", name: "National Open University of Nigeria (NOUN)", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Nigerian Army University, Biu", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "Ogun State College of Health Technology, Ilese-Ijebu", lat: 6.9075, lng: 3.5813, state: "Ogun State" },
+  { level: "university", name: "Rhema University, Aba", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "School of Nursing, Bida", lat: 9.0820, lng: 6.0029, state: "Niger State" },
+  { level: "university", name: "Tai Solarin University of Education, Ijagun", lat: 7.6200, lng: 5.2200, state: "Ekiti State" },
+  { level: "university", name: "Tansian University, Umunya", lat: 6.2758, lng: 7.0068, state: "Anambra State" },
+  { level: "university", name: "Umaru Musa Yar�Adua University, Katsina", lat: 12.9855, lng: 7.6174, state: "Katsina State" },
+  { level: "university", name: "University of Abuja", lat: 9.0765, lng: 7.3986, state: "FCT Abuja" },
+  { level: "university", name: "University of Africa, Toru-Orua", lat: 4.9212, lng: 6.2762, state: "Bayelsa State" },
+  { level: "university", name: "University of Calabar", lat: 9.082, lng: 8.675, state: "Nigeria" },
+  { level: "university", name: "University of Delta, Agbor", lat: 5.7040, lng: 6.1360, state: "Delta State" },
+  { level: "university", name: "University of Ibadan", lat: 7.3775, lng: 3.9470, state: "Oyo State" },
+  { level: "university", name: "University of Ilorin", lat: 7.3775, lng: 3.9470, state: "Oyo State" },
+  { level: "university", name: "University of Lagos (UNILAG)", lat: 6.5244, lng: 3.3792, state: "Lagos State" },
+  { level: "university", name: "University of Maiduguri", lat: 11.8311, lng: 13.1510, state: "Borno State" },
+  { level: "university", name: "University of Nigeria Enugu Campus (UNEC)", lat: 6.5244, lng: 7.5186, state: "Enugu State", students: 450 },
+  { level: "university", name: "University of Nigeria, Nsukka", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "University of Nigeria, Nsukka (UNN)", lat: 6.5244, lng: 7.5186, state: "Enugu State" },
+  { level: "university", name: "University of Port Harcourt", lat: 4.8156, lng: 7.0498, state: "Rivers State" },
+  { level: "university", name: "University of Uyo", lat: 5.0377, lng: 7.9128, state: "Akwa Ibom State" },
+  { level: "university", name: "Veritas University, Abuja", lat: 9.0765, lng: 7.3986, state: "FCT Abuja" },
+  { level: "university", name: "Yobe State University, Damaturu", lat: 11.7462, lng: 11.9608, state: "Yobe State" },
+  { level: "university", name: "Zamfara State College of Health Technology, Tsafe", lat: 12.1222, lng: 6.2236, state: "Zamfara State" },
+  { level: "university", name: "Zamfara State University, Talata Mafara", lat: 12.1222, lng: 6.2236, state: "Zamfara State" },
 ];
