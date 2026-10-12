@@ -24,10 +24,11 @@
 </script>
 </head>
 <body>
+  <audio id="backgroundAudio" src="Beyond_The_Gate.mp3.mp3" loop preload="metadata"></audio>
 
   <!-- HERO -->
   <section class="hero">
-    <header class="nav">
+    <header class="nav nav-home">
 
       <!-- LOGO -->
       <img src="logo.png" alt="TALK Logo" class="logo-img">
@@ -43,10 +44,20 @@
       </nav>
 
       <!-- ACTIONS -->
+      <div class="nav-controls">
       <div class="nav-actions">
         <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn ghost login-btn">Login</a>
         <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
       </div>
+
+      <button class="sound-toggle" id="soundToggle" type="button" aria-label="Background sound" aria-pressed="false" title="Turn sound on" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 5 6 9H3v6h3l5 4z" />
+          <g class="sound-waves"><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14" /></g>
+          <g class="sound-cross"><path d="m16 9 6 6m0-6-6 6" /></g>
+        </svg>
+      </button>
+      <span id="soundStatus" class="sound-status" role="status"></span>
 
       <!-- MOBILE MENU BUTTON -->
       <button class="menu-btn" id="menuBtn">
@@ -54,6 +65,7 @@
         <span></span>
         <span></span>
       </button>
+      </div>
 
     </header>
 

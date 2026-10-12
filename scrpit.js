@@ -1,4 +1,97 @@
 /* ── MOBILE MENU ──────────────────────────────────── */
+// Background audio: try on entry, then retry on interaction if autoplay is blocked.
+(() => {
+  const audio = document.getElementById("backgroundAudio");
+  const toggle = document.getElementById("soundToggle");
+  const status = document.getElementById("soundStatus");
+  if (!audio || !toggle || !status) return;
+
+  const preferenceKey = "talk-background-sound";
+  let enabled = true;
+  let pending = false;
+  let attempt = 0;
+  let waitingForGesture = false;
+
+  try {
+    enabled = localStorage.getItem(preferenceKey) !== "off";
+  } catch (_) { /* Sound still works when storage is unavailable. */ }
+
+  audio.volume = 0.35;
+  toggle.hidden = false;
+
+  function updateToggle() {
+    const playing = !audio.paused && !audio.muted && !audio.error;
+    toggle.setAttribute("aria-pressed", String(playing));
+    toggle.title = playing || pending ? "Turn sound off" : "Turn sound on";
+  }
+
+  function stopWaiting() {
+    waitingForGesture = false;
+    document.removeEventListener("click", resumeOnInteraction);
+    document.removeEventListener("keydown", resumeOnInteraction);
+  }
+
+  async function playAudio() {
+    const currentAttempt = ++attempt;
+    pending = true;
+    audio.muted = false;
+    updateToggle();
+    try {
+      await audio.play();
+      if (currentAttempt !== attempt) return;
+      stopWaiting();
+      status.textContent = "Background sound on.";
+    } catch (error) {
+      if (currentAttempt !== attempt) return;
+      if (error.name === "NotAllowedError") {
+        waitingForGesture = enabled;
+        document.addEventListener("click", resumeOnInteraction);
+        document.addEventListener("keydown", resumeOnInteraction);
+        status.textContent = "Use the speaker button to turn sound on.";
+      } else if (error.name !== "AbortError") {
+        stopWaiting();
+        status.textContent = "Background audio could not be loaded. Tap the speaker to retry.";
+      }
+    } finally {
+      if (currentAttempt === attempt) {
+        pending = false;
+        updateToggle();
+      }
+    }
+  }
+
+  function resumeOnInteraction(event) {
+    if (!waitingForGesture || !enabled || pending || toggle.contains(event.target)) return;
+    if (event.type === "keydown" && (event.repeat || !["Enter", " "].includes(event.key))) return;
+    playAudio();
+  }
+
+  toggle.addEventListener("click", () => {
+    stopWaiting();
+    enabled = !(pending || (!audio.paused && !audio.muted));
+    try {
+      localStorage.setItem(preferenceKey, enabled ? "on" : "off");
+    } catch (_) { /* Keep this visit's preference in memory. */ }
+
+    if (enabled) {
+      if (audio.error) audio.load();
+      playAudio();
+    } else {
+      ++attempt; // Ignore any older play promise that is still settling.
+      pending = false;
+      audio.pause();
+      status.textContent = "Background sound off.";
+      updateToggle();
+    }
+  });
+
+  ["playing", "pause", "volumechange", "error"].forEach(event => {
+    audio.addEventListener(event, updateToggle);
+  });
+  updateToggle();
+  if (enabled) playAudio();
+})();
+
 const menuBtn = document.querySelector(".menu-btn");
 const mobileMenu = document.querySelector(".mobile-menu");
 
