@@ -6,15 +6,11 @@
   const status = document.getElementById("soundStatus");
   if (!audio || !toggle || !status) return;
 
-  const preferenceKey = "talk-background-sound";
+  // Each page visit starts with sound enabled; the toggle applies to this visit.
   let enabled = true;
   let pending = false;
   let attempt = 0;
   let waitingForGesture = false;
-
-  try {
-    enabled = localStorage.getItem(preferenceKey) !== "off";
-  } catch (_) { /* Sound still works when storage is unavailable. */ }
 
   audio.volume = 0.35;
   toggle.hidden = false;
@@ -69,10 +65,6 @@
   toggle.addEventListener("click", () => {
     stopWaiting();
     enabled = !(pending || (!audio.paused && !audio.muted));
-    try {
-      localStorage.setItem(preferenceKey, enabled ? "on" : "off");
-    } catch (_) { /* Keep this visit's preference in memory. */ }
-
     if (enabled) {
       if (audio.error) audio.load();
       playAudio();
