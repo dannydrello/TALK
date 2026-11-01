@@ -712,6 +712,18 @@ header {
   text-decoration: none;
 }
 
+.social-icons a img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
+
+.social-icons .social-icon-app {
+  width: 38px;
+  height: 38px;
+}
+
 .social-icons a:hover {
   background: #ff7a00;
   color: #fff;

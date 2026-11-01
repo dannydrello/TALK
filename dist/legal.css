@@ -518,6 +518,50 @@ header {
   transform: translateY(-4px) scale(1.1);
 }
 
+.footer-app-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 0 0 24px;
+}
+
+.footer-app-strip__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255, 122, 0, 0.06);
+  border: 1px solid rgba(255, 122, 0, 0.18);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 8px 24px rgba(255, 122, 0, 0.08);
+}
+
+.footer-app-strip__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 122, 0, 0.3);
+  box-shadow: 0 12px 28px rgba(255, 122, 0, 0.14);
+}
+
+.footer-app-strip__item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.footer-app-strip__item span {
+  color: #ff7a00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .download-footer {
   text-align: center;
   padding: 40px 0;
