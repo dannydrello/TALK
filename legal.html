@@ -38,8 +38,7 @@
 
     <!-- ACTIONS -->
     <div class="nav-actions">
-      <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn ghost login-btn">Login</a>
-      <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
+      <!-- ADD APP STORE LINK WHEN iOS IS LIVE --> <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
     </div>
 
     <!-- MOBILE MENU BUTTON -->
@@ -58,7 +57,7 @@
     <a href="status.html">TALK Status</a>
     <a href="help.html">Help & Support</a>
     <a href="legal.html">Legal</a>
-    <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
+    <!-- ADD APP STORE LINK WHEN iOS IS LIVE --> <a href="https://play.google.com/store/apps/details?id=com.talk_wide.talk" class="btn">Download</a>
   </div>
 
   <!-- Main Content -->
@@ -162,6 +161,8 @@
           <section class="legal-section">
             <h3>2. Information We Collect</h3>
             <p><strong>Personal Information:</strong> When you register, we collect your name, email address, phone number, university, and profile information.</p>
+            <p><strong>Interests:</strong> The interests you choose, along with what you add to your profile (such as your bio, department and level).</p>
+            <p><strong>Contacts (with permission):</strong> If you allow it, the phone numbers in your phone's contact list. See section 4 for how we use them.</p>
             <p><strong>Usage Data:</strong> We collect information about how you interact with TALK, including posts, messages, transactions, and device information.</p>
             <p><strong>Location Data:</strong> With your permission, we may collect your location to provide location-based features.</p>
           </section>
@@ -172,59 +173,75 @@
             <ul>
               <li>Provide, maintain, and improve our services</li>
               <li>Verify your status and prevent fraud</li>
+              <li>Suggest people and communities you may want to connect with</li>
               <li>Send you updates, promotions, and customer support</li>
               <li>Analyze usage patterns and optimize user experience</li>
               <li>Comply with legal obligations</li>
             </ul>
           </section>
 
-          <section class="legal-section">
-            <h3>4. Legal Basis for Processing</h3>
-            <p>We process your data based on: your consent, contractual necessity, legitimate business interests, and legal compliance.</p>
+          <section class="legal-section" id="people-you-may-know">
+            <h3>4. People You May Know and Your Contacts</h3>
+            <p><strong>People You May Know / People You Should Know:</strong> TALK suggests people you might want to connect with. To do this, we look at your interests, keywords in your bio, your department and level, your university, and, only if you allow it, your phone contacts.</p>
+            <p><strong>Your phone contacts:</strong> TALK only accesses your phone contacts if you give permission. We use them for one thing: to find people you already know who are on TALK, so we can suggest them to you.</p>
+            <ul>
+              <!-- CONFIRM WITH BACKEND: raw vs hashed storage -->
+              <li><strong>Is it stored?</strong> We only keep the phone numbers needed to match you with people on TALK. Before they are stored, we turn them into a scrambled code (a "hash") so the original numbers are not kept in readable form. We do not store the names or other details from your contact list.</li>
+              <li><strong>How is it protected?</strong> Contact data is sent over an encrypted connection, kept on secure servers, and can only be accessed by systems that need it for suggestions. We never sell it or share it with other users.</li>
+              <!-- CONFIRM WITH BACKEND: retention period -->
+              <li><strong>How long is it kept?</strong> We keep it for as long as contact access is turned on for your account. If you turn it off, ask us to delete it, or delete your account, we delete your uploaded contact data within 30 days.</li>
+            </ul>
+            <p><strong>You're in control:</strong> You can say no when TALK asks for contact access, or turn it off later in your phone settings. You can still use TALK either way. You'll just see fewer suggestions of people you already know.</p>
+            <p><strong>Deleting your contact data:</strong> You can ask us to delete the contact data you've uploaded at any time by emailing <a href="mailto:support@talk-wide.com">support@talk-wide.com</a>.</p>
           </section>
 
           <section class="legal-section">
-            <h3>5. Information Sharing</h3>
+            <h3>5. Legal Basis for Processing</h3>
+            <p>We process your data based on: your consent, contractual necessity, legitimate business interests, and legal compliance. We handle your personal data in line with the Nigeria Data Protection Act 2023 (NDPA). Where we rely on your consent, such as for contact access, you can withdraw it at any time.</p>
+          </section>
+
+          <section class="legal-section">
+            <h3>6. Information Sharing</h3>
             <p>We do not sell your personal data. We may share information with: service providers, law enforcement (when required), and with your consent. Your profile information may be visible to other students on TALK.</p>
           </section>
 
           <section class="legal-section">
-            <h3>6. Security</h3>
+            <h3>7. Security</h3>
             <p>We use industry-standard encryption and security measures to protect your data. However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
           </section>
 
           <section class="legal-section">
-            <h3>7. Data Retention</h3>
+            <h3>8. Data Retention</h3>
             <p>We retain your personal data for as long as your account is active. If you delete your account, we will delete your data within 30 days, except where we are required to retain it by law.</p>
           </section>
 
           <section class="legal-section">
-            <h3>8. Your Rights</h3>
+            <h3>9. Your Rights</h3>
             <p>You have the right to access, correct, or delete your personal data. You may opt-out of promotional communications at any time. To exercise these rights, contact us at <a href="mailto:support@talk-wide.com">support@talk-wide.com</a>.</p>
           </section>
 
           <section class="legal-section">
-            <h3>9. Cookies</h3>
+            <h3>10. Cookies</h3>
             <p>We use cookies to enhance your experience. You can control cookie settings through your browser. Disabling cookies may affect platform functionality.</p>
           </section>
 
           <section class="legal-section">
-            <h3>10. Third-Party Links</h3>
+            <h3>11. Third-Party Links</h3>
             <p>TALK may contain links to third-party websites. We are not responsible for their privacy practices. Please review their privacy policies before providing your information.</p>
           </section>
 
           <section class="legal-section">
-            <h3>11. Age Restrictions</h3>
+            <h3>12. Age Restrictions</h3>
             <p>TALK is intended for users aged 14 and above. Users under 18 are considered minors, and we apply additional protections for them. We do not knowingly collect data from children under 14. If we discover that a user is under 14, we will delete their account and associated data immediately.</p>
           </section>
 
           <section class="legal-section">
-            <h3>12. International Data Transfers</h3>
+            <h3>13. International Data Transfers</h3>
             <p>Your data may be transferred, stored, and processed in countries other than your country of origin. By using TALK, you consent to such transfers.</p>
           </section>
 
           <section class="legal-section">
-            <h3>13. Contact Us</h3>
+            <h3>14. Contact Us</h3>
             <p>For privacy-related questions, contact us at:</p>
             <div class="contact-info">
               <p><strong>Email:</strong> <a href="mailto:support@talk-wide.com">support@talk-wide.com</a></p>
@@ -263,14 +280,14 @@
           <a href="https://x.com/TALKSUPP0101" title="X (Twitter)" aria-label="TALK on X"><i class="fab fa-twitter"></i></a>
           <a href="https://www.tiktok.com/@talk_main1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
           <a href="https://www.instagram.com/info_talkwide/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/109144219/admin/dashboard/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/company/talk-wide-technology-ltd/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://www.youtube.com/@TALKSUPPORT01" target="_blank"><i class="fa-brands fa-youtube"></i></a>
       <a class="social-icon-app" href="https://www.talk-wide.com/profile/30b1681e-5e1f-41e0-bce6-720848f919eb" title="TALK" aria-label="Visit TALK profile"><img src="Shadowed%20Talk.svg" alt="TALK app icon"></a>
         </div>
       </div>
     </div>
 <div class="download-footer">
-      <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.talk_wide.talk">Download TALK</a>
+      <!-- ADD APP STORE LINK WHEN iOS IS LIVE --> <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.talk_wide.talk">Download TALK</a>
       <span class="ios-note">iOS version coming soon</span>
     </div>
 

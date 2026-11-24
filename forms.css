@@ -1,0 +1,255 @@
+/* ═══════════════════════════════════════════════════
+   FORM PAGES  —  forms.css
+   contact.html, safety.html, careers.html, press.html, thank-you.html
+   Depends on: styles.css (nav, sections, footer, .btn, .hero-pill)
+═══════════════════════════════════════════════════ */
+
+/* ── HERO ──────────────────────────────────────────── */
+.fm-hero {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0d1120 60%, #111828 100%);
+  padding: 24px 8% 72px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.fm-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 80%, rgba(255,122,0,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.fm-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 56px auto 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fm-hero-content .hero-pill { margin-bottom: 22px; }
+
+.fm-hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.7s ease 0.15s both;
+}
+
+.fm-hero p {
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+/* ── FORM SECTION ──────────────────────────────────── */
+.fm-section {
+  background: linear-gradient(160deg, #fff7f0 0%, #fffaf6 55%, #fff2e8 100%);
+  padding: 72px 6% 96px;
+}
+
+.fm-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.fm-card {
+  background: #fff;
+  border: 1px solid rgba(255,122,0,0.12);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+.fm-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(220,38,38,0.06);
+  border: 1px solid rgba(220,38,38,0.2);
+  color: #7f1d1d;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 26px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.fm-note i { color: #dc2626; margin-top: 3px; }
+
+.fm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fm-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.fm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fm-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1f2e;
+}
+
+.fm-field label .fm-optional {
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.fm-field input,
+.fm-field select,
+.fm-field textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fffdfb;
+  color: #1a1f2e;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fm-field textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+.fm-field input:focus,
+.fm-field select:focus,
+.fm-field textarea:focus {
+  outline: none;
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 4px rgba(255,122,0,0.12);
+}
+
+.fm-hint {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.fm-submit {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #ff7a00, #ff6600);
+  color: #fff;
+  padding: 15px 38px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 4px 24px rgba(255,122,0,0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.fm-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(255,122,0,0.45);
+}
+
+.fm-submit:focus-visible { outline: 2px solid #1a1f2e; outline-offset: 3px; }
+
+/* ── CONTACT DETAILS (contact.html) ────────────────── */
+.fm-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.fm-detail {
+  background: #fff;
+  border: 1px solid rgba(255,122,0,0.12);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fm-detail i { color: #ff7a00; font-size: 18px; margin-bottom: 6px; }
+
+.fm-detail span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.fm-detail a {
+  color: #b85400;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.fm-detail a:hover { text-decoration: underline; }
+
+/* ── THANK YOU ─────────────────────────────────────── */
+.fm-thanks {
+  text-align: center;
+  padding: 48px 36px;
+}
+
+.fm-thanks-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,122,0,0.12);
+  color: #ff7a00;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.fm-thanks h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1f2e;
+  margin-bottom: 10px;
+}
+
+.fm-thanks p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.fm-thanks .fm-submit { align-self: center; display: inline-block; text-decoration: none; }
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 700px) {
+  .fm-row { grid-template-columns: 1fr; }
+  .fm-details { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .fm-hero { padding: 20px 5% 56px; }
+  .fm-hero-content { margin-top: 36px; }
+  .fm-section { padding: 48px 5% 72px; }
+  .fm-card { padding: 26px 20px; border-radius: 20px; }
+  .fm-submit { width: 100%; align-self: stretch; text-align: center; }
+  .fm-thanks { padding: 36px 20px; }
+}
