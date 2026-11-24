@@ -736,6 +736,61 @@ body {
   font-weight: 600;
 }
 
+/* Progress items (homepage): text instead of counters */
+.ns-stats--progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+}
+
+.ns-stats--progress .stat-num {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.ns-stats--progress .stat-label {
+  font-size: 14px;
+  color: #666;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Small feature points */
+.ns-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ns-points li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
+}
+
+.ns-points li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #ff7a00;
+  font-size: 13px;
+}
+
+/* Compact section (marketplace) */
+.new-section.ns-compact { padding-top: 70px; padding-bottom: 70px; }
+.ns-compact .ns-heading { font-size: 34px; }
+.ns-compact .ns-phone { width: 170px; }
+
 /* ── IMAGE WRAPPERS ───────────────────────────────── */
 .ns-img-wrap {
   display: flex;
@@ -1466,6 +1521,8 @@ body {
 
   .ns-heading { font-size: 30px; }
 
+  .ns-compact .ns-heading { font-size: 26px; }
+
   .ns-body { font-size: 15px; }
 
   .ns-btn { align-self: center; }
@@ -1509,6 +1566,12 @@ body {
   .ns-stats { gap: 20px; flex-wrap: wrap; }
 
   .stat-num { font-size: 28px; }
+
+  .ns-stats--progress { gap: 18px 16px; }
+  .ns-stats--progress .stat-num { font-size: 17px; }
+  .ns-stats--progress .stat-label { font-size: 13px; }
+  .new-section.ns-compact { padding-top: 48px; padding-bottom: 48px; }
+  .ns-compact .ns-heading { font-size: 24px; }
 
   .ticker-track span { font-size: 12px; letter-spacing: 1px; }
 
