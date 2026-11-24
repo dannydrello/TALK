@@ -28,6 +28,9 @@
     gtag('js', new Date());
     gtag('config', 'G-CQ4H9XMT4G');
   </script>
+
+  <!-- Globe.gl -->
+  <script src="https://unpkg.com/globe.gl"></script>
 </head>
 
 <body>
@@ -71,15 +74,12 @@
   </div>
 
   <!-- GLOBE SECTION -->
-  <section class="globe-section globe-soon">
-    <div class="globe-soon-inner">
-      <span class="globe-soon-icon"><i class="fas fa-globe-africa"></i></span>
+  <section class="globe-section">
+    <div class="globe-header">
       <h1>Campus Globe</h1>
-      <span class="globe-soon-pill">Coming soon</span>
-      <p>We're mapping every campus where TALK is live. Check back soon.</p>
+      <p>See all the campuses where TALK is live, around the world.</p>
     </div>
-    <!-- When the campus list is ready, restore <div id="globe-container"></div> here
-         and the globe.gl, globedata.js and globe.js script tags below. -->
+    <div id="globe-container"></div>
   </section>
 
   <footer class="site-footer globe-footer">
@@ -91,6 +91,12 @@
       </div>
     </div>
 </footer>
+
+  <!-- Data -->
+  <script src="globedata.js"></script>
+
+  <!-- Logic -->
+  <script src="globe.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
