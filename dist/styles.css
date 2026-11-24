@@ -1165,6 +1165,116 @@ body {
   transform: translateY(0);
 }
 
+/* ── PROFILE TAGS (badges) ────────────────────────── */
+/* Two styles only:
+   .tag--earned → badges you earn (Founding Member, TALK Status levels)
+   .tag--role   → what you do on TALK (Seller, Services, Host)
+   Add a <span class="tag__tip"> inside an earned tag for a hover/tap tooltip.
+   Tags default to dark-section colours; inside .ns-light / .ns-warm /
+   .ns-faq-section (or any .tags-light wrapper) they switch to light colours. */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag-row--center { justify-content: center; }
+
+.tag {
+  --tip-x: -50%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.tag--earned {
+  color: #ff7a00;
+  border-color: #ff7a00;
+  background: rgba(255,122,0,0.09);
+}
+
+.tag--role {
+  color: #c3c8d1;
+  background: #262b36;
+}
+
+/* Light sections: slightly deeper orange text so 12px stays readable */
+.ns-light .tag--earned,
+.ns-warm .tag--earned,
+.ns-faq-section .tag--earned,
+.tags-light .tag--earned { color: #b85400; }
+
+.ns-light .tag--role,
+.ns-warm .tag--role,
+.ns-faq-section .tag--role,
+.tags-light .tag--role {
+  color: #4b5563;
+  background: #eceef2;
+}
+
+/* Tooltip */
+.tag:has(.tag__tip) { cursor: help; }
+.tag:focus-visible { outline: 2px solid #ff7a00; outline-offset: 2px; }
+
+.tag__tip {
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 50%;
+  z-index: 50;
+  width: max-content;
+  max-width: min(240px, 80vw);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #1a1f2e;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  color: #f3f4f6;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--tip-x), -4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.tag__tip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-bottom-color: #1a1f2e;
+}
+
+@media (hover: hover) {
+  .tag:hover .tag__tip { opacity: 1; transform: translate(var(--tip-x), 0); }
+}
+
+.tag:focus-visible .tag__tip,
+.tag.is-open .tag__tip { opacity: 1; transform: translate(var(--tip-x), 0); }
+
+/* Tag sits at the left edge of a card: anchor tooltip to the left */
+.tag--tip-start { --tip-x: 0; }
+.tag--tip-start .tag__tip { left: 0; }
+.tag--tip-start .tag__tip::before { left: 16px; }
+
 /* ── FOOTER ───────────────────────────────────────── */
 .site-footer {
   background: #06080f;
@@ -1245,11 +1355,28 @@ body {
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.social-icons a img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
+
+.social-icons .social-icon-app {
+  width: 38px;
+  height: 38px;
+}
+
 .social-icons a:hover {
   background: #ff7a00;
   color: #fff;
   transform: translateY(-4px) scale(1.1);
   border-color: #ff7a00;
+}
+
+.social-icon-app img {
+  width: 18px;
+  height: 18px;
 }
 
 .download-footer {

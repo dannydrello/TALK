@@ -164,6 +164,29 @@ document.querySelectorAll(".faq-q").forEach(btn => {
   });
 });
 
+/* ── PROFILE TAG TOOLTIPS (tap to open on phones) ── */
+if (document.querySelector(".tag .tag__tip")) {
+  const closeTagTips = (except) => {
+    document.querySelectorAll(".tag.is-open").forEach(t => {
+      if (t !== except) t.classList.remove("is-open");
+    });
+  };
+
+  document.addEventListener("click", (e) => {
+    const tag = e.target.closest(".tag");
+    if (tag && tag.querySelector(".tag__tip")) {
+      closeTagTips(tag);
+      tag.classList.toggle("is-open");
+    } else {
+      closeTagTips();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeTagTips();
+  });
+}
+
 /* ── PARALLAX ON HERO ORBS (mouse move) ──────────── */
 const orbs = document.querySelectorAll(".orb");
 
